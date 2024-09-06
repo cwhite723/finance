@@ -1,7 +1,9 @@
-package com.hayan.dividend.service;
+package com.hayan.dividend.service.impl;
 
 import com.hayan.dividend.domain.dto.UserRequest;
 import com.hayan.dividend.jwt.JwtTokenProvider;
+import com.hayan.dividend.service.AuthenticationService;
+import com.hayan.dividend.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;

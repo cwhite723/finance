@@ -1,9 +1,10 @@
-package com.hayan.dividend.service;
+package com.hayan.dividend.service.impl;
 
 import com.hayan.dividend.domain.User;
 import com.hayan.dividend.domain.constant.Role;
 import com.hayan.dividend.domain.dto.UserRequest;
 import com.hayan.dividend.repository.UserRepository;
+import com.hayan.dividend.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

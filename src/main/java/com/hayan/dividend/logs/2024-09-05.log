@@ -121,9 +121,9 @@
         u1_0.username=?
 2024-09-05 04:18:22 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
 com.hayan.dividend.exception.CustomException: 존재하지 않는 회원입니다.
-	at com.hayan.dividend.service.CustomUserDetailsService.lambda$loadUserByUsername$0(CustomUserDetailsService.java:25)
+	at com.hayan.dividend.service.impl.UserDetailsServiceImpl.lambda$loadUserByUsername$0(CustomUserDetailsService.java:25)
 	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
-	at com.hayan.dividend.service.CustomUserDetailsService.loadUserByUsername(CustomUserDetailsService.java:25)
+	at com.hayan.dividend.service.impl.UserDetailsServiceImpl.loadUserByUsername(CustomUserDetailsService.java:25)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -153,7 +153,7 @@ com.hayan.dividend.exception.CustomException: 존재하지 않는 회원입니�
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
-	at com.hayan.dividend.service.CustomUserDetailsService$$SpringCGLIB$$0.loadUserByUsername(<generated>)
+	at com.hayan.dividend.service.impl.UserDetailsServiceImpl$$SpringCGLIB$$0.loadUserByUsername(<generated>)
 	at com.hayan.dividend.jwt.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:27)
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
@@ -2937,9 +2937,9 @@ com.hayan.dividend.exception.CustomException: 존재하지 않는 회원입니�
         u1_0.username=?
 2024-09-05 04:57:28 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
 com.hayan.dividend.exception.CustomException: 존재하지 않는 회원입니다.
-	at com.hayan.dividend.service.CustomUserDetailsService.lambda$loadUserByUsername$0(CustomUserDetailsService.java:25)
+	at com.hayan.dividend.service.impl.UserDetailsServiceImpl.lambda$loadUserByUsername$0(CustomUserDetailsService.java:25)
 	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
-	at com.hayan.dividend.service.CustomUserDetailsService.loadUserByUsername(CustomUserDetailsService.java:25)
+	at com.hayan.dividend.service.impl.UserDetailsServiceImpl.loadUserByUsername(CustomUserDetailsService.java:25)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -2969,7 +2969,7 @@ com.hayan.dividend.exception.CustomException: 존재하지 않는 회원입니�
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
-	at com.hayan.dividend.service.CustomUserDetailsService$$SpringCGLIB$$0.loadUserByUsername(<generated>)
+	at com.hayan.dividend.service.impl.UserDetailsServiceImpl$$SpringCGLIB$$0.loadUserByUsername(<generated>)
 	at com.hayan.dividend.jwt.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:27)
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
@@ -5141,9 +5141,9 @@ io.jsonwebtoken.RequiredTypeException: Cannot convert existing claim value of ty
         u1_0.username=?
 2024-09-05 08:28:15 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
 com.hayan.dividend.exception.CustomException: 존재하지 않는 회원입니다.
-	at com.hayan.dividend.service.CustomUserDetailsService.lambda$loadUserByUsername$0(CustomUserDetailsService.java:25)
+	at com.hayan.dividend.service.impl.UserDetailsServiceImpl.lambda$loadUserByUsername$0(CustomUserDetailsService.java:25)
 	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
-	at com.hayan.dividend.service.CustomUserDetailsService.loadUserByUsername(CustomUserDetailsService.java:25)
+	at com.hayan.dividend.service.impl.UserDetailsServiceImpl.loadUserByUsername(CustomUserDetailsService.java:25)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -5173,7 +5173,7 @@ com.hayan.dividend.exception.CustomException: 존재하지 않는 회원입니�
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
-	at com.hayan.dividend.service.CustomUserDetailsService$$SpringCGLIB$$0.loadUserByUsername(<generated>)
+	at com.hayan.dividend.service.impl.UserDetailsServiceImpl$$SpringCGLIB$$0.loadUserByUsername(<generated>)
 	at com.hayan.dividend.jwt.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:29)
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
@@ -8630,7 +8630,7 @@ java.lang.IndexOutOfBoundsException: Index 1 out of bounds for length 1
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
 	at com.hayan.dividend.scraper.YahooFinanceScraper$$SpringCGLIB$$0.scrapCompany(<generated>)
-	at com.hayan.dividend.service.FinanceServiceImpl.save(FinanceService.java:38)
+	at com.hayan.dividend.service.impl.FinanceServiceImpl.save(FinanceService.java:38)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -8663,7 +8663,7 @@ java.lang.IndexOutOfBoundsException: Index 1 out of bounds for length 1
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
-	at com.hayan.dividend.service.FinanceServiceImpl$$SpringCGLIB$$0.save(<generated>)
+	at com.hayan.dividend.service.impl.FinanceServiceImpl$$SpringCGLIB$$0.save(<generated>)
 	at com.hayan.dividend.controller.FinanceController.create(FinanceController.java:25)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
@@ -9052,7 +9052,7 @@ java.lang.IndexOutOfBoundsException: Index 1 out of bounds for length 1
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
 	at com.hayan.dividend.scraper.YahooFinanceScraper$$SpringCGLIB$$0.scrapCompany(<generated>)
-	at com.hayan.dividend.service.FinanceServiceImpl.save(FinanceService.java:38)
+	at com.hayan.dividend.service.impl.FinanceServiceImpl.save(FinanceService.java:38)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -9085,7 +9085,7 @@ java.lang.IndexOutOfBoundsException: Index 1 out of bounds for length 1
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
-	at com.hayan.dividend.service.FinanceServiceImpl$$SpringCGLIB$$0.save(<generated>)
+	at com.hayan.dividend.service.impl.FinanceServiceImpl$$SpringCGLIB$$0.save(<generated>)
 	at com.hayan.dividend.controller.FinanceController.create(FinanceController.java:25)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)

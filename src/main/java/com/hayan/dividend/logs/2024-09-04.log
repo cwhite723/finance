@@ -71,7 +71,7 @@
 2024-09-04 06:13:15 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2024-09-04 06:13:15 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
 2024-09-04 06:13:15 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-2024-09-04 06:13:15 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: void com.hayan.dividend.service.FinanceServiceImpl.save(String) with arguments: [coke]
+2024-09-04 06:13:15 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: void com.hayan.dividend.service.impl.FinanceServiceImpl.save(String) with arguments: [coke]
 2024-09-04 06:13:15 DEBUG org.hibernate.SQL - 
     /* <criteria> */ select
         c1_0.id 
@@ -81,7 +81,7 @@
         c1_0.ticker=? 
     fetch
         first ? rows only
-2024-09-04 06:13:17 ERROR c.hayan.dividend.aop.LoggingAspect - Exception in method: void com.hayan.dividend.service.FinanceServiceImpl.save(String) with message: 존재하지 않는 회사입니다.
+2024-09-04 06:13:17 ERROR c.hayan.dividend.aop.LoggingAspect - Exception in method: void com.hayan.dividend.service.impl.FinanceServiceImpl.save(String) with message: 존재하지 않는 회사입니다.
 2024-09-04 06:13:17 WARN  c.h.d.e.GlobalExceptionHandler - CustomException Occurred: 존재하지 않는 회사입니다.
 2024-09-04 06:13:17 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.hayan.dividend.exception.CustomException: 존재하지 않는 회사입니다.]
 2024-09-04 06:13:59 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
@@ -161,7 +161,7 @@
 2024-09-04 06:14:08 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2024-09-04 06:14:08 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
 2024-09-04 06:14:08 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-2024-09-04 06:14:08 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: void com.hayan.dividend.service.FinanceServiceImpl.save(String) with arguments: [coke]
+2024-09-04 06:14:08 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: void com.hayan.dividend.service.impl.FinanceServiceImpl.save(String) with arguments: [coke]
 2024-09-04 06:14:08 DEBUG org.hibernate.SQL - 
     /* <criteria> */ select
         c1_0.id 
@@ -1235,9 +1235,9 @@
         dividends (company_id, date, dividend, id) 
     values
         (?, ?, ?, default)
-2024-09-04 06:14:11 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: void com.hayan.dividend.service.FinanceServiceImpl.save(String) with result: null
-2024-09-04 06:14:11 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: void com.hayan.dividend.service.FinanceServiceImpl.save(String) in 3194 ms
-2024-09-04 06:16:05 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: CompanyDetailsResponse com.hayan.dividend.service.FinanceServiceImpl.loadCompanyDetails(String) with arguments: [Coca-Cola Consolidated, Inc.]
+2024-09-04 06:14:11 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: void com.hayan.dividend.service.impl.FinanceServiceImpl.save(String) with result: null
+2024-09-04 06:14:11 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: void com.hayan.dividend.service.impl.FinanceServiceImpl.save(String) in 3194 ms
+2024-09-04 06:16:05 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: CompanyDetailsResponse com.hayan.dividend.service.impl.FinanceServiceImpl.loadCompanyDetails(String) with arguments: [Coca-Cola Consolidated, Inc.]
 2024-09-04 06:16:05 DEBUG org.hibernate.SQL - 
     /* <criteria> */ select
         c1_0.id,
@@ -1257,8 +1257,8 @@
         dividends d1_0 
     where
         d1_0.company_id=?
-2024-09-04 06:16:05 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: CompanyDetailsResponse com.hayan.dividend.service.FinanceServiceImpl.loadCompanyDetails(String) with result: CompanyDetailsResponse[company=CompanyResponse[id=1, ticker=coke, name=Coca-Cola Consolidated, Inc.], dividends=[DividendResponse[date=2024-07-26, dividend=0.50 Dividend], DividendResponse[date=2024-04-25, dividend=0.50 Dividend], DividendResponse[date=2024-01-25, dividend=16.50 Dividend], DividendResponse[date=2023-10-26, dividend=0.50 Dividend], DividendResponse[date=2023-07-27, dividend=0.50 Dividend], DividendResponse[date=2023-04-27, dividend=0.50 Dividend], DividendResponse[date=2023-01-26, dividend=3.50 Dividend], DividendResponse[date=2022-10-26, dividend=0.25 Dividend], DividendResponse[date=2022-07-28, dividend=0.25 Dividend], DividendResponse[date=2022-04-27, dividend=0.25 Dividend], DividendResponse[date=2022-01-27, dividend=0.25 Dividend], DividendResponse[date=2021-10-21, dividend=0.25 Dividend], DividendResponse[date=2021-07-22, dividend=0.25 Dividend], DividendResponse[date=2021-04-22, dividend=0.25 Dividend], DividendResponse[date=2021-01-21, dividend=0.25 Dividend], DividendResponse[date=2020-10-22, dividend=0.25 Dividend], DividendResponse[date=2020-07-23, dividend=0.25 Dividend], DividendResponse[date=2020-04-22, dividend=0.25 Dividend], DividendResponse[date=2020-01-23, dividend=0.25 Dividend], DividendResponse[date=2019-10-24, dividend=0.25 Dividend], DividendResponse[date=2019-07-25, dividend=0.25 Dividend], DividendResponse[date=2019-04-25, dividend=0.25 Dividend], DividendResponse[date=2019-01-24, dividend=0.25 Dividend], DividendResponse[date=2018-10-25, dividend=0.25 Dividend], DividendResponse[date=2018-07-26, dividend=0.25 Dividend], DividendResponse[date=2018-04-26, dividend=0.25 Dividend], DividendResponse[date=2018-01-25, dividend=0.25 Dividend], DividendResponse[date=2017-10-26, dividend=0.25 Dividend], DividendResponse[date=2017-07-26, dividend=0.25 Dividend], DividendResponse[date=2017-04-26, dividend=0.25 Dividend], DividendResponse[date=2017-01-25, dividend=0.25 Dividend], DividendResponse[date=2016-10-26, dividend=0.25 Dividend], DividendResponse[date=2016-07-27, dividend=0.25 Dividend], DividendResponse[date=2016-04-27, dividend=0.25 Dividend], DividendResponse[date=2016-01-27, dividend=0.25 Dividend], DividendResponse[date=2015-10-28, dividend=0.25 Dividend], DividendResponse[date=2015-07-29, dividend=0.25 Dividend], DividendResponse[date=2015-04-29, dividend=0.25 Dividend], DividendResponse[date=2015-01-28, dividend=0.25 Dividend], DividendResponse[date=2014-10-29, dividend=0.25 Dividend], DividendResponse[date=2014-07-30, dividend=0.25 Dividend], DividendResponse[date=2014-04-30, dividend=0.25 Dividend], DividendResponse[date=2014-01-29, dividend=0.25 Dividend], DividendResponse[date=2013-10-30, dividend=0.25 Dividend], DividendResponse[date=2013-07-31, dividend=0.25 Dividend], DividendResponse[date=2013-05-01, dividend=0.25 Dividend], DividendResponse[date=2013-01-30, dividend=0.25 Dividend], DividendResponse[date=2012-10-31, dividend=0.25 Dividend], DividendResponse[date=2012-08-01, dividend=0.25 Dividend], DividendResponse[date=2012-05-02, dividend=0.25 Dividend], DividendResponse[date=2012-02-01, dividend=0.25 Dividend], DividendResponse[date=2011-11-03, dividend=0.25 Dividend], DividendResponse[date=2011-08-03, dividend=0.25 Dividend], DividendResponse[date=2011-05-04, dividend=0.25 Dividend], DividendResponse[date=2011-02-03, dividend=0.25 Dividend], DividendResponse[date=2010-11-04, dividend=0.25 Dividend], DividendResponse[date=2010-08-04, dividend=0.25 Dividend], DividendResponse[date=2010-05-05, dividend=0.25 Dividend], DividendResponse[date=2010-02-04, dividend=0.25 Dividend], DividendResponse[date=2009-11-05, dividend=0.25 Dividend], DividendResponse[date=2009-08-05, dividend=0.25 Dividend], DividendResponse[date=2009-05-06, dividend=0.25 Dividend], DividendResponse[date=2009-02-05, dividend=0.25 Dividend], DividendResponse[date=2008-11-05, dividend=0.25 Dividend], DividendResponse[date=2008-08-06, dividend=0.25 Dividend], DividendResponse[date=2008-05-07, dividend=0.25 Dividend], DividendResponse[date=2008-02-06, dividend=0.25 Dividend], DividendResponse[date=2007-11-07, dividend=0.25 Dividend], DividendResponse[date=2007-08-08, dividend=0.25 Dividend], DividendResponse[date=2007-05-09, dividend=0.25 Dividend], DividendResponse[date=2007-02-07, dividend=0.25 Dividend], DividendResponse[date=2006-11-08, dividend=0.25 Dividend], DividendResponse[date=2006-08-09, dividend=0.25 Dividend], DividendResponse[date=2006-05-10, dividend=0.25 Dividend], DividendResponse[date=2006-02-08, dividend=0.25 Dividend], DividendResponse[date=2005-11-08, dividend=0.25 Dividend], DividendResponse[date=2005-08-10, dividend=0.25 Dividend], DividendResponse[date=2005-05-11, dividend=0.25 Dividend], DividendResponse[date=2005-02-09, dividend=0.25 Dividend], DividendResponse[date=2004-11-09, dividend=0.25 Dividend], DividendResponse[date=2004-08-11, dividend=0.25 Dividend], DividendResponse[date=2004-05-12, dividend=0.25 Dividend], DividendResponse[date=2004-02-11, dividend=0.25 Dividend], DividendResponse[date=2003-11-12, dividend=0.25 Dividend], DividendResponse[date=2003-08-13, dividend=0.25 Dividend], DividendResponse[date=2003-05-14, dividend=0.25 Dividend], DividendResponse[date=2003-02-12, dividend=0.25 Dividend], DividendResponse[date=2002-11-13, dividend=0.25 Dividend], DividendResponse[date=2002-08-14, dividend=0.25 Dividend], DividendResponse[date=2002-05-15, dividend=0.25 Dividend], DividendResponse[date=2002-02-13, dividend=0.25 Dividend], DividendResponse[date=2001-11-14, dividend=0.25 Dividend], DividendResponse[date=2001-08-15, dividend=0.25 Dividend], DividendResponse[date=2001-05-16, dividend=0.25 Dividend], DividendResponse[date=2001-02-14, dividend=0.25 Dividend], DividendResponse[date=2000-11-15, dividend=0.25 Dividend], DividendResponse[date=2000-08-16, dividend=0.25 Dividend], DividendResponse[date=2000-05-17, dividend=0.25 Dividend], DividendResponse[date=2000-02-16, dividend=0.25 Dividend], DividendResponse[date=1999-11-17, dividend=0.25 Dividend], DividendResponse[date=1999-08-18, dividend=0.25 Dividend], DividendResponse[date=1999-05-19, dividend=0.25 Dividend], DividendResponse[date=1999-02-17, dividend=0.25 Dividend], DividendResponse[date=1998-11-18, dividend=0.25 Dividend], DividendResponse[date=1998-08-19, dividend=0.25 Dividend], DividendResponse[date=1998-05-20, dividend=0.25 Dividend], DividendResponse[date=1998-02-18, dividend=0.25 Dividend], DividendResponse[date=1997-11-19, dividend=0.25 Dividend], DividendResponse[date=1997-08-20, dividend=0.25 Dividend], DividendResponse[date=1997-05-20, dividend=0.25 Dividend], DividendResponse[date=1997-02-18, dividend=0.25 Dividend], DividendResponse[date=1996-11-20, dividend=0.25 Dividend], DividendResponse[date=1996-08-21, dividend=0.25 Dividend], DividendResponse[date=1996-05-21, dividend=0.25 Dividend], DividendResponse[date=1996-02-20, dividend=0.25 Dividend], DividendResponse[date=1995-11-21, dividend=0.25 Dividend], DividendResponse[date=1995-08-23, dividend=0.25 Dividend], DividendResponse[date=1995-05-19, dividend=0.25 Dividend], DividendResponse[date=1995-02-16, dividend=0.25 Dividend], DividendResponse[date=1994-11-18, dividend=0.25 Dividend], DividendResponse[date=1994-08-22, dividend=0.25 Dividend], DividendResponse[date=1994-05-20, dividend=0.25 Dividend], DividendResponse[date=1994-02-17, dividend=0.25 Dividend], DividendResponse[date=1993-11-19, dividend=0.22 Dividend], DividendResponse[date=1993-08-23, dividend=0.22 Dividend], DividendResponse[date=1993-05-21, dividend=0.22 Dividend], DividendResponse[date=1993-02-18, dividend=0.22 Dividend], DividendResponse[date=1992-11-19, dividend=0.22 Dividend], DividendResponse[date=1992-08-21, dividend=0.22 Dividend], DividendResponse[date=1992-05-20, dividend=0.22 Dividend], DividendResponse[date=1992-02-19, dividend=0.22 Dividend], DividendResponse[date=1991-11-19, dividend=0.22 Dividend], DividendResponse[date=1991-08-20, dividend=0.22 Dividend], DividendResponse[date=1991-05-20, dividend=0.22 Dividend], DividendResponse[date=1991-02-19, dividend=0.22 Dividend], DividendResponse[date=1990-11-16, dividend=0.22 Dividend], DividendResponse[date=1990-08-20, dividend=0.22 Dividend], DividendResponse[date=1990-05-18, dividend=0.22 Dividend], DividendResponse[date=1990-02-15, dividend=0.22 Dividend], DividendResponse[date=1989-11-17, dividend=0.22 Dividend], DividendResponse[date=1989-08-18, dividend=0.22 Dividend], DividendResponse[date=1989-05-24, dividend=0.22 Dividend], DividendResponse[date=1989-02-16, dividend=0.22 Dividend], DividendResponse[date=1988-11-17, dividend=0.22 Dividend], DividendResponse[date=1988-08-18, dividend=0.22 Dividend], DividendResponse[date=1988-05-20, dividend=0.22 Dividend], DividendResponse[date=1988-02-18, dividend=0.22 Dividend], DividendResponse[date=1987-11-18, dividend=0.22 Dividend], DividendResponse[date=1987-08-20, dividend=0.22 Dividend], DividendResponse[date=1987-05-20, dividend=0.22 Dividend], DividendResponse[date=1987-02-18, dividend=0.22 Dividend]]]
-2024-09-04 06:16:05 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: CompanyDetailsResponse com.hayan.dividend.service.FinanceServiceImpl.loadCompanyDetails(String) in 30 ms
+2024-09-04 06:16:05 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: CompanyDetailsResponse com.hayan.dividend.service.impl.FinanceServiceImpl.loadCompanyDetails(String) with result: CompanyDetailsResponse[company=CompanyResponse[id=1, ticker=coke, name=Coca-Cola Consolidated, Inc.], dividends=[DividendResponse[date=2024-07-26, dividend=0.50 Dividend], DividendResponse[date=2024-04-25, dividend=0.50 Dividend], DividendResponse[date=2024-01-25, dividend=16.50 Dividend], DividendResponse[date=2023-10-26, dividend=0.50 Dividend], DividendResponse[date=2023-07-27, dividend=0.50 Dividend], DividendResponse[date=2023-04-27, dividend=0.50 Dividend], DividendResponse[date=2023-01-26, dividend=3.50 Dividend], DividendResponse[date=2022-10-26, dividend=0.25 Dividend], DividendResponse[date=2022-07-28, dividend=0.25 Dividend], DividendResponse[date=2022-04-27, dividend=0.25 Dividend], DividendResponse[date=2022-01-27, dividend=0.25 Dividend], DividendResponse[date=2021-10-21, dividend=0.25 Dividend], DividendResponse[date=2021-07-22, dividend=0.25 Dividend], DividendResponse[date=2021-04-22, dividend=0.25 Dividend], DividendResponse[date=2021-01-21, dividend=0.25 Dividend], DividendResponse[date=2020-10-22, dividend=0.25 Dividend], DividendResponse[date=2020-07-23, dividend=0.25 Dividend], DividendResponse[date=2020-04-22, dividend=0.25 Dividend], DividendResponse[date=2020-01-23, dividend=0.25 Dividend], DividendResponse[date=2019-10-24, dividend=0.25 Dividend], DividendResponse[date=2019-07-25, dividend=0.25 Dividend], DividendResponse[date=2019-04-25, dividend=0.25 Dividend], DividendResponse[date=2019-01-24, dividend=0.25 Dividend], DividendResponse[date=2018-10-25, dividend=0.25 Dividend], DividendResponse[date=2018-07-26, dividend=0.25 Dividend], DividendResponse[date=2018-04-26, dividend=0.25 Dividend], DividendResponse[date=2018-01-25, dividend=0.25 Dividend], DividendResponse[date=2017-10-26, dividend=0.25 Dividend], DividendResponse[date=2017-07-26, dividend=0.25 Dividend], DividendResponse[date=2017-04-26, dividend=0.25 Dividend], DividendResponse[date=2017-01-25, dividend=0.25 Dividend], DividendResponse[date=2016-10-26, dividend=0.25 Dividend], DividendResponse[date=2016-07-27, dividend=0.25 Dividend], DividendResponse[date=2016-04-27, dividend=0.25 Dividend], DividendResponse[date=2016-01-27, dividend=0.25 Dividend], DividendResponse[date=2015-10-28, dividend=0.25 Dividend], DividendResponse[date=2015-07-29, dividend=0.25 Dividend], DividendResponse[date=2015-04-29, dividend=0.25 Dividend], DividendResponse[date=2015-01-28, dividend=0.25 Dividend], DividendResponse[date=2014-10-29, dividend=0.25 Dividend], DividendResponse[date=2014-07-30, dividend=0.25 Dividend], DividendResponse[date=2014-04-30, dividend=0.25 Dividend], DividendResponse[date=2014-01-29, dividend=0.25 Dividend], DividendResponse[date=2013-10-30, dividend=0.25 Dividend], DividendResponse[date=2013-07-31, dividend=0.25 Dividend], DividendResponse[date=2013-05-01, dividend=0.25 Dividend], DividendResponse[date=2013-01-30, dividend=0.25 Dividend], DividendResponse[date=2012-10-31, dividend=0.25 Dividend], DividendResponse[date=2012-08-01, dividend=0.25 Dividend], DividendResponse[date=2012-05-02, dividend=0.25 Dividend], DividendResponse[date=2012-02-01, dividend=0.25 Dividend], DividendResponse[date=2011-11-03, dividend=0.25 Dividend], DividendResponse[date=2011-08-03, dividend=0.25 Dividend], DividendResponse[date=2011-05-04, dividend=0.25 Dividend], DividendResponse[date=2011-02-03, dividend=0.25 Dividend], DividendResponse[date=2010-11-04, dividend=0.25 Dividend], DividendResponse[date=2010-08-04, dividend=0.25 Dividend], DividendResponse[date=2010-05-05, dividend=0.25 Dividend], DividendResponse[date=2010-02-04, dividend=0.25 Dividend], DividendResponse[date=2009-11-05, dividend=0.25 Dividend], DividendResponse[date=2009-08-05, dividend=0.25 Dividend], DividendResponse[date=2009-05-06, dividend=0.25 Dividend], DividendResponse[date=2009-02-05, dividend=0.25 Dividend], DividendResponse[date=2008-11-05, dividend=0.25 Dividend], DividendResponse[date=2008-08-06, dividend=0.25 Dividend], DividendResponse[date=2008-05-07, dividend=0.25 Dividend], DividendResponse[date=2008-02-06, dividend=0.25 Dividend], DividendResponse[date=2007-11-07, dividend=0.25 Dividend], DividendResponse[date=2007-08-08, dividend=0.25 Dividend], DividendResponse[date=2007-05-09, dividend=0.25 Dividend], DividendResponse[date=2007-02-07, dividend=0.25 Dividend], DividendResponse[date=2006-11-08, dividend=0.25 Dividend], DividendResponse[date=2006-08-09, dividend=0.25 Dividend], DividendResponse[date=2006-05-10, dividend=0.25 Dividend], DividendResponse[date=2006-02-08, dividend=0.25 Dividend], DividendResponse[date=2005-11-08, dividend=0.25 Dividend], DividendResponse[date=2005-08-10, dividend=0.25 Dividend], DividendResponse[date=2005-05-11, dividend=0.25 Dividend], DividendResponse[date=2005-02-09, dividend=0.25 Dividend], DividendResponse[date=2004-11-09, dividend=0.25 Dividend], DividendResponse[date=2004-08-11, dividend=0.25 Dividend], DividendResponse[date=2004-05-12, dividend=0.25 Dividend], DividendResponse[date=2004-02-11, dividend=0.25 Dividend], DividendResponse[date=2003-11-12, dividend=0.25 Dividend], DividendResponse[date=2003-08-13, dividend=0.25 Dividend], DividendResponse[date=2003-05-14, dividend=0.25 Dividend], DividendResponse[date=2003-02-12, dividend=0.25 Dividend], DividendResponse[date=2002-11-13, dividend=0.25 Dividend], DividendResponse[date=2002-08-14, dividend=0.25 Dividend], DividendResponse[date=2002-05-15, dividend=0.25 Dividend], DividendResponse[date=2002-02-13, dividend=0.25 Dividend], DividendResponse[date=2001-11-14, dividend=0.25 Dividend], DividendResponse[date=2001-08-15, dividend=0.25 Dividend], DividendResponse[date=2001-05-16, dividend=0.25 Dividend], DividendResponse[date=2001-02-14, dividend=0.25 Dividend], DividendResponse[date=2000-11-15, dividend=0.25 Dividend], DividendResponse[date=2000-08-16, dividend=0.25 Dividend], DividendResponse[date=2000-05-17, dividend=0.25 Dividend], DividendResponse[date=2000-02-16, dividend=0.25 Dividend], DividendResponse[date=1999-11-17, dividend=0.25 Dividend], DividendResponse[date=1999-08-18, dividend=0.25 Dividend], DividendResponse[date=1999-05-19, dividend=0.25 Dividend], DividendResponse[date=1999-02-17, dividend=0.25 Dividend], DividendResponse[date=1998-11-18, dividend=0.25 Dividend], DividendResponse[date=1998-08-19, dividend=0.25 Dividend], DividendResponse[date=1998-05-20, dividend=0.25 Dividend], DividendResponse[date=1998-02-18, dividend=0.25 Dividend], DividendResponse[date=1997-11-19, dividend=0.25 Dividend], DividendResponse[date=1997-08-20, dividend=0.25 Dividend], DividendResponse[date=1997-05-20, dividend=0.25 Dividend], DividendResponse[date=1997-02-18, dividend=0.25 Dividend], DividendResponse[date=1996-11-20, dividend=0.25 Dividend], DividendResponse[date=1996-08-21, dividend=0.25 Dividend], DividendResponse[date=1996-05-21, dividend=0.25 Dividend], DividendResponse[date=1996-02-20, dividend=0.25 Dividend], DividendResponse[date=1995-11-21, dividend=0.25 Dividend], DividendResponse[date=1995-08-23, dividend=0.25 Dividend], DividendResponse[date=1995-05-19, dividend=0.25 Dividend], DividendResponse[date=1995-02-16, dividend=0.25 Dividend], DividendResponse[date=1994-11-18, dividend=0.25 Dividend], DividendResponse[date=1994-08-22, dividend=0.25 Dividend], DividendResponse[date=1994-05-20, dividend=0.25 Dividend], DividendResponse[date=1994-02-17, dividend=0.25 Dividend], DividendResponse[date=1993-11-19, dividend=0.22 Dividend], DividendResponse[date=1993-08-23, dividend=0.22 Dividend], DividendResponse[date=1993-05-21, dividend=0.22 Dividend], DividendResponse[date=1993-02-18, dividend=0.22 Dividend], DividendResponse[date=1992-11-19, dividend=0.22 Dividend], DividendResponse[date=1992-08-21, dividend=0.22 Dividend], DividendResponse[date=1992-05-20, dividend=0.22 Dividend], DividendResponse[date=1992-02-19, dividend=0.22 Dividend], DividendResponse[date=1991-11-19, dividend=0.22 Dividend], DividendResponse[date=1991-08-20, dividend=0.22 Dividend], DividendResponse[date=1991-05-20, dividend=0.22 Dividend], DividendResponse[date=1991-02-19, dividend=0.22 Dividend], DividendResponse[date=1990-11-16, dividend=0.22 Dividend], DividendResponse[date=1990-08-20, dividend=0.22 Dividend], DividendResponse[date=1990-05-18, dividend=0.22 Dividend], DividendResponse[date=1990-02-15, dividend=0.22 Dividend], DividendResponse[date=1989-11-17, dividend=0.22 Dividend], DividendResponse[date=1989-08-18, dividend=0.22 Dividend], DividendResponse[date=1989-05-24, dividend=0.22 Dividend], DividendResponse[date=1989-02-16, dividend=0.22 Dividend], DividendResponse[date=1988-11-17, dividend=0.22 Dividend], DividendResponse[date=1988-08-18, dividend=0.22 Dividend], DividendResponse[date=1988-05-20, dividend=0.22 Dividend], DividendResponse[date=1988-02-18, dividend=0.22 Dividend], DividendResponse[date=1987-11-18, dividend=0.22 Dividend], DividendResponse[date=1987-08-20, dividend=0.22 Dividend], DividendResponse[date=1987-05-20, dividend=0.22 Dividend], DividendResponse[date=1987-02-18, dividend=0.22 Dividend]]]
+2024-09-04 06:16:05 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: CompanyDetailsResponse com.hayan.dividend.service.impl.FinanceServiceImpl.loadCompanyDetails(String) in 30 ms
 2024-09-04 06:20:37 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-09-04 06:20:37 WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
 2024-09-04 06:20:37 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
@@ -1336,7 +1336,7 @@
 2024-09-04 06:20:47 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2024-09-04 06:20:47 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
 2024-09-04 06:20:47 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
-2024-09-04 06:20:47 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: void com.hayan.dividend.service.FinanceServiceImpl.save(String) with arguments: [coke]
+2024-09-04 06:20:47 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: void com.hayan.dividend.service.impl.FinanceServiceImpl.save(String) with arguments: [coke]
 2024-09-04 06:20:47 DEBUG org.hibernate.SQL - 
     /* <criteria> */ select
         c1_0.id 
@@ -2410,8 +2410,8 @@
         dividends (company_id, date, dividend, id) 
     values
         (?, ?, ?, default)
-2024-09-04 06:20:51 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: void com.hayan.dividend.service.FinanceServiceImpl.save(String) with result: null
-2024-09-04 06:20:51 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: void com.hayan.dividend.service.FinanceServiceImpl.save(String) in 3507 ms
+2024-09-04 06:20:51 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: void com.hayan.dividend.service.impl.FinanceServiceImpl.save(String) with result: null
+2024-09-04 06:20:51 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: void com.hayan.dividend.service.impl.FinanceServiceImpl.save(String) in 3507 ms
 2024-09-04 06:26:20 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-09-04 06:26:20 WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
 2024-09-04 06:26:20 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
@@ -2493,7 +2493,7 @@
 2024-09-04 06:35:41 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2024-09-04 06:35:41 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
 2024-09-04 06:35:41 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-2024-09-04 06:35:41 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: void com.hayan.dividend.service.FinanceServiceImpl.save(String) with arguments: [coke]
+2024-09-04 06:35:41 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: void com.hayan.dividend.service.impl.FinanceServiceImpl.save(String) with arguments: [coke]
 2024-09-04 06:35:42 DEBUG org.hibernate.SQL - 
     /* <criteria> */ select
         c1_0.id 
@@ -2510,9 +2510,9 @@
         companies (name, ticker, id) 
     values
         (?, ?, default)
-2024-09-04 06:35:45 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: void com.hayan.dividend.service.FinanceServiceImpl.save(String) with result: null
-2024-09-04 06:35:45 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: void com.hayan.dividend.service.FinanceServiceImpl.save(String) in 3355 ms
-2024-09-04 06:38:46 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: void com.hayan.dividend.service.FinanceServiceImpl.delete(String) with arguments: [coke]
+2024-09-04 06:35:45 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: void com.hayan.dividend.service.impl.FinanceServiceImpl.save(String) with result: null
+2024-09-04 06:35:45 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: void com.hayan.dividend.service.impl.FinanceServiceImpl.save(String) in 3355 ms
+2024-09-04 06:38:46 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: void com.hayan.dividend.service.impl.FinanceServiceImpl.delete(String) with arguments: [coke]
 2024-09-04 06:38:46 DEBUG org.hibernate.SQL - 
     /* <criteria> */ select
         c1_0.id,
@@ -2532,8 +2532,8 @@
         dividends d1_0 
     where
         d1_0.company_id=?
-2024-09-04 06:38:46 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: void com.hayan.dividend.service.FinanceServiceImpl.delete(String) with result: null
-2024-09-04 06:38:46 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: void com.hayan.dividend.service.FinanceServiceImpl.delete(String) in 60 ms
+2024-09-04 06:38:46 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: void com.hayan.dividend.service.impl.FinanceServiceImpl.delete(String) with result: null
+2024-09-04 06:38:46 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: void com.hayan.dividend.service.impl.FinanceServiceImpl.delete(String) in 60 ms
 2024-09-04 06:38:46 DEBUG org.hibernate.SQL - 
     /* delete for com.hayan.dividend.domain.Dividend */delete 
     from
@@ -3523,7 +3523,7 @@
 2024-09-04 06:44:10 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2024-09-04 06:44:10 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
 2024-09-04 06:44:10 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
-2024-09-04 06:44:10 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: void com.hayan.dividend.service.FinanceServiceImpl.save(String) with arguments: [coke]
+2024-09-04 06:44:10 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: void com.hayan.dividend.service.impl.FinanceServiceImpl.save(String) with arguments: [coke]
 2024-09-04 06:44:10 DEBUG org.hibernate.SQL - 
     /* <criteria> */ select
         c1_0.id 
@@ -3540,9 +3540,9 @@
         companies (name, ticker, id) 
     values
         (?, ?, default)
-2024-09-04 06:44:14 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: void com.hayan.dividend.service.FinanceServiceImpl.save(String) with result: null
-2024-09-04 06:44:14 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: void com.hayan.dividend.service.FinanceServiceImpl.save(String) in 3411 ms
-2024-09-04 06:44:21 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: void com.hayan.dividend.service.FinanceServiceImpl.delete(String) with arguments: [coke]
+2024-09-04 06:44:14 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: void com.hayan.dividend.service.impl.FinanceServiceImpl.save(String) with result: null
+2024-09-04 06:44:14 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: void com.hayan.dividend.service.impl.FinanceServiceImpl.save(String) in 3411 ms
+2024-09-04 06:44:21 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: void com.hayan.dividend.service.impl.FinanceServiceImpl.delete(String) with arguments: [coke]
 2024-09-04 06:44:21 DEBUG org.hibernate.SQL - 
     /* <criteria> */ select
         c1_0.id,
@@ -3552,7 +3552,7 @@
         companies c1_0 
     where
         c1_0.name=?
-2024-09-04 06:44:21 ERROR c.hayan.dividend.aop.LoggingAspect - Exception in method: void com.hayan.dividend.service.FinanceServiceImpl.delete(String) with message: 존재하지 않는 회사입니다.
+2024-09-04 06:44:21 ERROR c.hayan.dividend.aop.LoggingAspect - Exception in method: void com.hayan.dividend.service.impl.FinanceServiceImpl.delete(String) with message: 존재하지 않는 회사입니다.
 2024-09-04 06:44:21 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.hayan.dividend.exception.CustomException: 존재하지 않는 회사입니다.]
 2024-09-04 06:46:32 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-09-04 06:46:32 WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
@@ -3631,7 +3631,7 @@
 2024-09-04 06:46:40 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2024-09-04 06:46:40 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
 2024-09-04 06:46:40 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-2024-09-04 06:46:41 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: void com.hayan.dividend.service.FinanceServiceImpl.save(String) with arguments: [coke]
+2024-09-04 06:46:41 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: void com.hayan.dividend.service.impl.FinanceServiceImpl.save(String) with arguments: [coke]
 2024-09-04 06:46:41 DEBUG org.hibernate.SQL - 
     /* <criteria> */ select
         c1_0.id 
@@ -3648,9 +3648,9 @@
         companies (name, ticker, id) 
     values
         (?, ?, default)
-2024-09-04 06:46:44 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: void com.hayan.dividend.service.FinanceServiceImpl.save(String) with result: null
-2024-09-04 06:46:44 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: void com.hayan.dividend.service.FinanceServiceImpl.save(String) in 3039 ms
-2024-09-04 06:46:50 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: void com.hayan.dividend.service.FinanceServiceImpl.delete(String) with arguments: [coke]
+2024-09-04 06:46:44 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: void com.hayan.dividend.service.impl.FinanceServiceImpl.save(String) with result: null
+2024-09-04 06:46:44 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: void com.hayan.dividend.service.impl.FinanceServiceImpl.save(String) in 3039 ms
+2024-09-04 06:46:50 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: void com.hayan.dividend.service.impl.FinanceServiceImpl.delete(String) with arguments: [coke]
 2024-09-04 06:46:50 DEBUG org.hibernate.SQL - 
     /* <criteria> */ select
         c1_0.id,
@@ -3660,8 +3660,8 @@
         companies c1_0 
     where
         c1_0.ticker=?
-2024-09-04 06:46:50 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: void com.hayan.dividend.service.FinanceServiceImpl.delete(String) with result: null
-2024-09-04 06:46:50 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: void com.hayan.dividend.service.FinanceServiceImpl.delete(String) in 27 ms
+2024-09-04 06:46:50 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: void com.hayan.dividend.service.impl.FinanceServiceImpl.delete(String) with result: null
+2024-09-04 06:46:50 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: void com.hayan.dividend.service.impl.FinanceServiceImpl.delete(String) in 27 ms
 2024-09-04 06:49:33 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-09-04 06:49:33 WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
 2024-09-04 06:49:33 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
@@ -4218,7 +4218,7 @@ APPLICATION FAILED TO START
 
 Description:
 
-Parameter 1 of constructor in com.hayan.dividend.service.FinanceServiceImpl required a bean of type 'org.springframework.data.redis.cache.RedisCacheManager' that could not be found.
+Parameter 1 of constructor in com.hayan.dividend.service.impl.FinanceServiceImpl required a bean of type 'org.springframework.data.redis.cache.RedisCacheManager' that could not be found.
 
 
 Action:

@@ -1,4 +1,4 @@
-package com.hayan.dividend.service;
+package com.hayan.dividend.service.impl;
 
 import com.hayan.dividend.domain.constant.Role;
 import com.hayan.dividend.domain.User;
@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class CustomUserDetailsService implements UserDetailsService {
+public class UserDetailsServiceImpl implements UserDetailsService {
 
     private final UserRepository userRepository;
 

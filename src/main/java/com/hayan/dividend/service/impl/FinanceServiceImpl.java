@@ -1,4 +1,4 @@
-package com.hayan.dividend.service;
+package com.hayan.dividend.service.impl;
 
 import com.hayan.dividend.domain.Company;
 import com.hayan.dividend.domain.dto.CompanyDetailsResponse;
@@ -9,9 +9,12 @@ import com.hayan.dividend.exception.ErrorCode;
 import com.hayan.dividend.repository.CompanyRepository;
 import com.hayan.dividend.repository.DividendBulkRepository;
 import com.hayan.dividend.scraper.Scraper;
+import com.hayan.dividend.service.FinanceService;
 import com.hayan.dividend.util.CompanyAddedEvent;
 import com.hayan.dividend.util.CompanyDeletedEvent;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.Cache;
+import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Page;
@@ -22,12 +25,13 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
-public class FinanceServiceImpl implements FinanceService{
+public class FinanceServiceImpl implements FinanceService {
 
     private final Scraper scraper;
     private final CompanyRepository companyRepository;
     private final DividendBulkRepository dividendBulkRepository;
     private final ApplicationEventPublisher eventPublisher;
+    private final CacheManager cacheManager;
 
     @Override
     @Transactional
@@ -71,8 +75,15 @@ public class FinanceServiceImpl implements FinanceService{
     @Transactional
     public void delete(String ticker) {
         Company company = getCompanyByTicker(ticker);
+
         dividendBulkRepository.deleteAllByCompanyId(company.getId());
+        companyRepository.delete(company);
         eventPublisher.publishEvent(new CompanyDeletedEvent(company.getName()));
+
+        Cache cache = cacheManager.getCache("finance");
+        if (cache != null) {
+            cache.evict(company.getName());
+        }
     }
 
     private void validateCompanyExist(String ticker) {
