@@ -21,14 +21,14 @@ public class UserController {
     private final UserService userService;
     private final AuthenticationService authenticationService;
 
-    @PostMapping("/register")
+    @PostMapping("/signup")
     public ApplicationResponse<Void> register(@RequestBody UserRequest request) {
         userService.register(request);
         return ApplicationResponse.noData();
     }
 
     @PostMapping("/signin")
-    public ResponseEntity signin(@RequestBody UserRequest request) {
+    public ResponseEntity login(@RequestBody UserRequest request) {
         String jwtToken = authenticationService.authenticateAndGenerateToken(request);
 
         HttpHeaders headers = new HttpHeaders();

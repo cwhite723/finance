@@ -1,0 +1,1126 @@
+2024-09-06 00:00:00 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: YahooFinanceScheduling.updateDividends with arguments: []
+2024-09-06 00:00:00 DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        c1_0.id,
+        c1_0.name,
+        c1_0.ticker 
+    from
+        companies c1_0
+2024-09-06 00:00:00 WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 42104, SQLState: 42S04
+2024-09-06 00:00:00 ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Table "COMPANIES" not found (this database is empty); SQL statement:
+/* <criteria> */ select c1_0.id,c1_0.name,c1_0.ticker from companies c1_0 [42104-224]
+2024-09-06 00:00:00 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - Unexpected error occurred in scheduled task
+org.springframework.dao.InvalidDataAccessResourceUsageException: could not prepare statement [Table "COMPANIES" not found (this database is empty); SQL statement:
+/* <criteria> */ select c1_0.id,c1_0.name,c1_0.ticker from companies c1_0 [42104-224]] [/* <criteria> */ select c1_0.id,c1_0.name,c1_0.ticker from companies c1_0]; SQL [/* <criteria> */ select c1_0.id,c1_0.name,c1_0.ticker from companies c1_0]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:277)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:241)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:550)
+	at org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61)
+	at org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:335)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:160)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy4/jdk.proxy4.$Proxy155.findAll(Unknown Source)
+	at com.hayan.dividend.scraper.YahooFinanceScheduling.updateDividends(YahooFinanceScheduling.java:27)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at com.hayan.dividend.aop.LoggingAspect.logExecutionTime(LoggingAspect.java:38)
+	at jdk.internal.reflect.GeneratedMethodAccessor25.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:637)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:627)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.cache.interceptor.CacheInterceptor.lambda$invoke$0(CacheInterceptor.java:55)
+	at org.springframework.cache.interceptor.CacheAspectSupport.invokeOperation(CacheAspectSupport.java:416)
+	at org.springframework.cache.interceptor.CacheAspectSupport.evaluate(CacheAspectSupport.java:551)
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:433)
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:395)
+	at org.springframework.cache.interceptor.CacheInterceptor.invoke(CacheInterceptor.java:65)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
+	at com.hayan.dividend.scraper.YahooFinanceScheduling$$SpringCGLIB$$0.updateDividends(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:499)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.hibernate.exception.SQLGrammarException: could not prepare statement [Table "COMPANIES" not found (this database is empty); SQL statement:
+/* <criteria> */ select c1_0.id,c1_0.name,c1_0.ticker from companies c1_0 [42104-224]] [/* <criteria> */ select c1_0.id,c1_0.name,c1_0.ticker from companies c1_0]
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:66)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:194)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareQueryStatement(StatementPreparerImpl.java:155)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.lambda$list$0(JdbcSelectExecutor.java:85)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:231)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.getResultSet(DeferredResultSetAccess.java:167)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.advanceNext(JdbcValuesResultSetImpl.java:265)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.processNext(JdbcValuesResultSetImpl.java:145)
+	at org.hibernate.sql.results.jdbc.internal.AbstractJdbcValues.next(AbstractJdbcValues.java:19)
+	at org.hibernate.sql.results.internal.RowProcessingStateStandardImpl.next(RowProcessingStateStandardImpl.java:67)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:204)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:33)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:211)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:83)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:76)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:65)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$2(ConcreteSqmSelectQueryPlan.java:139)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:382)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:302)
+	at org.hibernate.query.sqm.internal.QuerySqmImpl.doList(QuerySqmImpl.java:526)
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:423)
+	at org.hibernate.query.Query.getResultList(Query.java:120)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAll(SimpleJpaRepository.java:386)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:277)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:516)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:628)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:173)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:148)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	... 61 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "COMPANIES" not found (this database is empty); SQL statement:
+/* <criteria> */ select c1_0.id,c1_0.name,c1_0.ticker from companies c1_0 [42104-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.Parser.getTableOrViewNotFoundDbException(Parser.java:8051)
+	at org.h2.command.Parser.getTableOrViewNotFoundDbException(Parser.java:8035)
+	at org.h2.command.Parser.readTableOrView(Parser.java:8024)
+	at org.h2.command.Parser.readTablePrimary(Parser.java:1788)
+	at org.h2.command.Parser.readTableReference(Parser.java:2268)
+	at org.h2.command.Parser.parseSelectFromPart(Parser.java:2718)
+	at org.h2.command.Parser.parseSelect(Parser.java:2824)
+	at org.h2.command.Parser.parseQueryPrimary(Parser.java:2708)
+	at org.h2.command.Parser.parseQueryTerm(Parser.java:2564)
+	at org.h2.command.Parser.parseQueryExpressionBody(Parser.java:2543)
+	at org.h2.command.Parser.parseQueryExpressionBodyAndEndOfQuery(Parser.java:2536)
+	at org.h2.command.Parser.parseQueryExpression(Parser.java:2529)
+	at org.h2.command.Parser.parseQuery(Parser.java:2498)
+	at org.h2.command.Parser.parsePrepared(Parser.java:627)
+	at org.h2.command.Parser.parse(Parser.java:592)
+	at org.h2.command.Parser.parse(Parser.java:564)
+	at org.h2.command.Parser.prepareCommand(Parser.java:483)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:639)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:559)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1166)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:93)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:316)
+	at com.zaxxer.hikari.pool.ProxyConnection.prepareStatement(ProxyConnection.java:328)
+	at com.zaxxer.hikari.pool.HikariProxyConnection.prepareStatement(HikariProxyConnection.java)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$5.doPrepare(StatementPreparerImpl.java:153)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:183)
+	... 103 common frames omitted
+2024-09-06 00:50:38 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Retrograde clock change detected (housekeeper delta=27s880ms), soft-evicting connections from pool.
+2024-09-06 01:04:17 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-09-06 01:04:17 WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-09-06 01:04:17 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-09-06 01:04:17 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-09-06 01:04:21 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-09-06 01:04:21 INFO  c.hayan.dividend.DividendApplication - Starting DividendApplication using Java 17.0.7 with PID 74638 (/Users/chowhite/coding/zerobase/dividend/build/classes/java/main started by chowhite in /Users/chowhite/coding/zerobase/dividend)
+2024-09-06 01:04:21 INFO  c.hayan.dividend.DividendApplication - The following 2 profiles are active: "test", "default"
+2024-09-06 01:04:21 INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/chowhite/.gradle/caches/modules-2/files-2.1/io.github.cdimascio/java-dotenv/5.2.2/f77d54ff193ed4b07415ab8d7b3d0550716aa8c/java-dotenv-5.2.2.jar referenced one or more files that do not exist: file:/Users/chowhite/.gradle/caches/modules-2/files-2.1/io.github.cdimascio/java-dotenv/5.2.2/f77d54ff193ed4b07415ab8d7b3d0550716aa8c/kotlin-stdlib-1.4.0.jar,file:/Users/chowhite/.gradle/caches/modules-2/files-2.1/io.github.cdimascio/java-dotenv/5.2.2/f77d54ff193ed4b07415ab8d7b3d0550716aa8c/kotlin-stdlib-common-1.4.0.jar,file:/Users/chowhite/.gradle/caches/modules-2/files-2.1/io.github.cdimascio/java-dotenv/5.2.2/f77d54ff193ed4b07415ab8d7b3d0550716aa8c/annotations-13.0.jar
+2024-09-06 01:04:21 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-09-06 01:04:21 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-09-06 01:04:21 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-09-06 01:04:21 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-06 01:04:21 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 64 ms. Found 3 JPA repository interfaces.
+2024-09-06 01:04:21 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-09-06 01:04:21 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-09-06 01:04:21 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.hayan.dividend.repository.CompanyRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-09-06 01:04:21 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.hayan.dividend.repository.DividendRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-09-06 01:04:21 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.hayan.dividend.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-09-06 01:04:21 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2024-09-06 01:04:22 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-09-06 01:04:22 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-09-06 01:04:22 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-09-06 01:04:22 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-09-06 01:04:22 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-09-06 01:04:22 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 763 ms
+2024-09-06 01:04:22 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-09-06 01:04:22 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:db user=SA
+2024-09-06 01:04:22 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-09-06 01:04:22 INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:db'
+2024-09-06 01:04:22 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-09-06 01:04:22 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-09-06 01:04:22 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-09-06 01:04:22 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-09-06 01:04:22 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-09-06 01:04:22 DEBUG org.hibernate.SQL - 
+    create table companies (
+        id bigint generated by default as identity,
+        name varchar(255) not null,
+        ticker varchar(255) not null,
+        primary key (id)
+    )
+2024-09-06 01:04:22 DEBUG org.hibernate.SQL - 
+    create table dividends (
+        id bigint generated by default as identity,
+        date date,
+        dividend varchar(255),
+        company_id bigint,
+        primary key (id)
+    )
+2024-09-06 01:04:22 DEBUG org.hibernate.SQL - 
+    create table user_roles (
+        user_id bigint not null,
+        role enum ('READ','WRITE')
+    )
+2024-09-06 01:04:22 DEBUG org.hibernate.SQL - 
+    create table users (
+        id bigint generated by default as identity,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    )
+2024-09-06 01:04:22 DEBUG org.hibernate.SQL - 
+    alter table if exists users 
+       drop constraint if exists UKr43af9ap4edm43mmtq01oddj6
+2024-09-06 01:04:22 DEBUG org.hibernate.SQL - 
+    alter table if exists users 
+       add constraint UKr43af9ap4edm43mmtq01oddj6 unique (username)
+2024-09-06 01:04:22 DEBUG org.hibernate.SQL - 
+    alter table if exists dividends 
+       add constraint FKeg6asiy7s7dns1nsxve1avean 
+       foreign key (company_id) 
+       references companies
+2024-09-06 01:04:22 DEBUG org.hibernate.SQL - 
+    alter table if exists user_roles 
+       add constraint FKhfh9dx7w3ubf1co1vdev94g3f 
+       foreign key (user_id) 
+       references users
+2024-09-06 01:04:22 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-06 01:04:23 DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        c1_0.id,
+        c1_0.name,
+        c1_0.ticker 
+    from
+        companies c1_0
+2024-09-06 01:04:23 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: CacheConfig.redisConnectionFactory with arguments: []
+2024-09-06 01:04:23 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: CacheConfig.redisConnectionFactory with result: org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory@7e577fd
+2024-09-06 01:04:23 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: CacheConfig.redisConnectionFactory in 8 ms
+2024-09-06 01:04:23 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: CacheConfig.redisCacheManager with arguments: [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory@7e577fd]
+2024-09-06 01:04:23 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: CacheConfig.redisCacheManager with result: org.springframework.data.redis.cache.RedisCacheManager@4c1e355
+2024-09-06 01:04:23 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: CacheConfig.redisCacheManager in 8 ms
+2024-09-06 01:04:23 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: SecurityConfig.passwordEncoder with arguments: []
+2024-09-06 01:04:23 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: SecurityConfig.passwordEncoder with result: org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder@3e31962a
+2024-09-06 01:04:23 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: SecurityConfig.passwordEncoder in 1 ms
+2024-09-06 01:04:23 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: SecurityConfig.authenticationManager with arguments: [org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration@96dfe75]
+2024-09-06 01:04:23 INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-09-06 01:04:23 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: SecurityConfig.authenticationManager with result: org.springframework.security.authentication.ProviderManager@348fbfc9
+2024-09-06 01:04:23 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: SecurityConfig.authenticationManager in 10 ms
+2024-09-06 01:04:23 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-09-06 01:04:23 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: SecurityConfig.securityFilterChain with arguments: [org.springframework.security.config.annotation.web.builders.HttpSecurity@1289a839]
+2024-09-06 01:04:23 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: SecurityConfig.securityFilterChain with result: DefaultSecurityFilterChain [RequestMatcher=any request, Filters=[org.springframework.security.web.session.DisableEncodeUrlFilter@143a37a5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3e8ecf44, org.springframework.security.web.context.SecurityContextHolderFilter@1dcc255d, org.springframework.security.web.header.HeaderWriterFilter@7771ded6, org.springframework.security.web.authentication.logout.LogoutFilter@7b4e5011, com.hayan.dividend.jwt.JwtAuthenticationFilter@1593c4b3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5dfe89b5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@192fea9f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7c5b03f0, org.springframework.security.web.session.SessionManagementFilter@3fd8498e, org.springframework.security.web.access.ExceptionTranslationFilter@365a1176, org.springframework.security.web.access.intercept.AuthorizationFilter@593e7402]]
+2024-09-06 01:04:23 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: SecurityConfig.securityFilterChain in 18 ms
+2024-09-06 01:04:23 INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-09-06 01:04:23 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-09-06 01:04:23 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-09-06 01:04:23 INFO  c.hayan.dividend.DividendApplication - Started DividendApplication in 2.419 seconds (process running for 2.775)
+2024-09-06 01:05:25 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-09-06 01:05:25 WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-09-06 01:05:25 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-09-06 01:05:25 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-09-06 01:05:27 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-09-06 01:05:27 INFO  c.hayan.dividend.DividendApplication - Starting DividendApplication using Java 17.0.7 with PID 74722 (/Users/chowhite/coding/zerobase/dividend/build/classes/java/main started by chowhite in /Users/chowhite/coding/zerobase/dividend)
+2024-09-06 01:05:27 INFO  c.hayan.dividend.DividendApplication - The following 2 profiles are active: "test", "default"
+2024-09-06 01:05:27 INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/chowhite/.gradle/caches/modules-2/files-2.1/io.github.cdimascio/java-dotenv/5.2.2/f77d54ff193ed4b07415ab8d7b3d0550716aa8c/java-dotenv-5.2.2.jar referenced one or more files that do not exist: file:/Users/chowhite/.gradle/caches/modules-2/files-2.1/io.github.cdimascio/java-dotenv/5.2.2/f77d54ff193ed4b07415ab8d7b3d0550716aa8c/kotlin-stdlib-1.4.0.jar,file:/Users/chowhite/.gradle/caches/modules-2/files-2.1/io.github.cdimascio/java-dotenv/5.2.2/f77d54ff193ed4b07415ab8d7b3d0550716aa8c/kotlin-stdlib-common-1.4.0.jar,file:/Users/chowhite/.gradle/caches/modules-2/files-2.1/io.github.cdimascio/java-dotenv/5.2.2/f77d54ff193ed4b07415ab8d7b3d0550716aa8c/annotations-13.0.jar
+2024-09-06 01:05:27 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-09-06 01:05:27 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-09-06 01:05:27 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-09-06 01:05:27 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-06 01:05:27 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 66 ms. Found 3 JPA repository interfaces.
+2024-09-06 01:05:27 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-09-06 01:05:27 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-09-06 01:05:27 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.hayan.dividend.repository.CompanyRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-09-06 01:05:27 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.hayan.dividend.repository.DividendRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-09-06 01:05:27 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.hayan.dividend.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-09-06 01:05:27 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2024-09-06 01:05:28 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-09-06 01:05:28 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-09-06 01:05:28 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-09-06 01:05:28 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-09-06 01:05:28 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-09-06 01:05:28 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 791 ms
+2024-09-06 01:05:28 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-09-06 01:05:28 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:db user=SA
+2024-09-06 01:05:28 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-09-06 01:05:28 INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:db'
+2024-09-06 01:05:28 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-09-06 01:05:28 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-09-06 01:05:28 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-09-06 01:05:28 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-09-06 01:05:28 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-09-06 01:05:28 DEBUG org.hibernate.SQL - 
+    create table companies (
+        id bigint generated by default as identity,
+        name varchar(255) not null,
+        ticker varchar(255) not null,
+        primary key (id)
+    )
+2024-09-06 01:05:28 DEBUG org.hibernate.SQL - 
+    create table dividends (
+        id bigint generated by default as identity,
+        date date,
+        dividend varchar(255),
+        company_id bigint,
+        primary key (id)
+    )
+2024-09-06 01:05:28 DEBUG org.hibernate.SQL - 
+    create table user_roles (
+        user_id bigint not null,
+        role enum ('READ','WRITE')
+    )
+2024-09-06 01:05:28 DEBUG org.hibernate.SQL - 
+    create table users (
+        id bigint generated by default as identity,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    )
+2024-09-06 01:05:28 DEBUG org.hibernate.SQL - 
+    alter table if exists users 
+       drop constraint if exists UKr43af9ap4edm43mmtq01oddj6
+2024-09-06 01:05:28 DEBUG org.hibernate.SQL - 
+    alter table if exists users 
+       add constraint UKr43af9ap4edm43mmtq01oddj6 unique (username)
+2024-09-06 01:05:28 DEBUG org.hibernate.SQL - 
+    alter table if exists dividends 
+       add constraint FKeg6asiy7s7dns1nsxve1avean 
+       foreign key (company_id) 
+       references companies
+2024-09-06 01:05:28 DEBUG org.hibernate.SQL - 
+    alter table if exists user_roles 
+       add constraint FKhfh9dx7w3ubf1co1vdev94g3f 
+       foreign key (user_id) 
+       references users
+2024-09-06 01:05:28 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-06 01:05:29 DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        c1_0.id,
+        c1_0.name,
+        c1_0.ticker 
+    from
+        companies c1_0
+2024-09-06 01:05:29 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: CacheConfig.redisConnectionFactory with arguments: []
+2024-09-06 01:05:29 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: CacheConfig.redisConnectionFactory with result: org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory@78624128
+2024-09-06 01:05:29 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: CacheConfig.redisConnectionFactory in 8 ms
+2024-09-06 01:05:29 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: CacheConfig.redisCacheManager with arguments: [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory@78624128]
+2024-09-06 01:05:29 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: CacheConfig.redisCacheManager with result: org.springframework.data.redis.cache.RedisCacheManager@3e7dc4fc
+2024-09-06 01:05:29 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: CacheConfig.redisCacheManager in 9 ms
+2024-09-06 01:05:29 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: SecurityConfig.passwordEncoder with arguments: []
+2024-09-06 01:05:29 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: SecurityConfig.passwordEncoder with result: org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder@38a49d9e
+2024-09-06 01:05:29 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: SecurityConfig.passwordEncoder in 1 ms
+2024-09-06 01:05:29 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: SecurityConfig.authenticationManager with arguments: [org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration@e129b39]
+2024-09-06 01:05:29 INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-09-06 01:05:29 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: SecurityConfig.authenticationManager with result: org.springframework.security.authentication.ProviderManager@376c90cb
+2024-09-06 01:05:29 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: SecurityConfig.authenticationManager in 10 ms
+2024-09-06 01:05:29 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-09-06 01:05:29 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: SecurityConfig.securityFilterChain with arguments: [org.springframework.security.config.annotation.web.builders.HttpSecurity@48750c1e]
+2024-09-06 01:05:29 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: SecurityConfig.securityFilterChain with result: DefaultSecurityFilterChain [RequestMatcher=any request, Filters=[org.springframework.security.web.session.DisableEncodeUrlFilter@7c5b03f0, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@391994c1, org.springframework.security.web.context.SecurityContextHolderFilter@50b46caf, org.springframework.security.web.header.HeaderWriterFilter@64575c91, org.springframework.security.web.authentication.logout.LogoutFilter@4ed6512, com.hayan.dividend.jwt.JwtAuthenticationFilter@71a59849, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@609d24ec, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1e98b53d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7a186c92, org.springframework.security.web.session.SessionManagementFilter@1dcc255d, org.springframework.security.web.access.ExceptionTranslationFilter@352a7434, org.springframework.security.web.access.intercept.AuthorizationFilter@143a37a5]]
+2024-09-06 01:05:29 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: SecurityConfig.securityFilterChain in 18 ms
+2024-09-06 01:05:29 INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-09-06 01:05:29 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-09-06 01:05:29 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-09-06 01:05:29 INFO  c.hayan.dividend.DividendApplication - Started DividendApplication in 2.449 seconds (process running for 2.748)
+2024-09-06 01:05:39 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-09-06 01:05:39 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-09-06 01:05:39 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-09-06 01:05:39 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: UserController.register with arguments: [UserRequest[username=hayan, password=test, roles=[WRITE, READ]]]
+2024-09-06 01:05:39 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: UserService.register with arguments: [UserRequest[username=hayan, password=test, roles=[WRITE, READ]]]
+2024-09-06 01:05:40 DEBUG org.hibernate.SQL - 
+    /* insert for
+        com.hayan.dividend.domain.User */insert 
+    into
+        users (password, username, id) 
+    values
+        (?, ?, default)
+2024-09-06 01:05:40 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: UserService.register with result: null
+2024-09-06 01:05:40 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: UserService.register in 102 ms
+2024-09-06 01:05:40 DEBUG org.hibernate.SQL - 
+    /* insert for
+        com.hayan.dividend.domain.User.roles */insert 
+    into
+        user_roles (user_id, role) 
+    values
+        (?, ?)
+2024-09-06 01:05:40 DEBUG org.hibernate.SQL - 
+    /* insert for
+        com.hayan.dividend.domain.User.roles */insert 
+    into
+        user_roles (user_id, role) 
+    values
+        (?, ?)
+2024-09-06 01:05:40 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: UserController.register with result: com.hayan.dividend.global.ApplicationResponse@715408f9
+2024-09-06 01:05:40 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: UserController.register in 108 ms
+2024-09-06 01:05:41 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: UserController.signin with arguments: [UserRequest[username=hayan, password=test, roles=null]]
+2024-09-06 01:05:41 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: AuthenticationService.authenticateAndGenerateToken with arguments: [UserRequest[username=hayan, password=test, roles=null]]
+2024-09-06 01:05:41 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: UserService.authenticate with arguments: [UserRequest[username=hayan, password=test, roles=null]]
+2024-09-06 01:05:41 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: CustomUserDetailsService.loadUserByUsername with arguments: [hayan]
+2024-09-06 01:05:41 DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.password,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2024-09-06 01:05:41 DEBUG org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_0.role 
+    from
+        user_roles r1_0 
+    where
+        r1_0.user_id=?
+2024-09-06 01:05:41 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: CustomUserDetailsService.loadUserByUsername with result: org.springframework.security.core.userdetails.User [Username=hayan, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_READ, ROLE_WRITE]]
+2024-09-06 01:05:41 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: CustomUserDetailsService.loadUserByUsername in 20 ms
+2024-09-06 01:05:42 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: UserService.authenticate with result: UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=hayan, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_READ, ROLE_WRITE]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_READ, ROLE_WRITE]]
+2024-09-06 01:05:42 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: UserService.authenticate in 204 ms
+2024-09-06 01:05:42 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: JwtTokenProvider.generateToken with arguments: [hayan, [ROLE_READ, ROLE_WRITE]]
+2024-09-06 01:05:42 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: JwtTokenProvider.generateToken with result: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoYXlhbiIsInJvbGVzIjpbIlJPTEVfUkVBRCIsIlJPTEVfV1JJVEUiXSwiaWF0IjoxNzI1NTUyMzQyLCJleHAiOjE3MjU2Mzg3NDJ9.nGY1iaPgBlCz_1uCHNStbGZq_2iGbgC-IXoFpAO2q9zEkmodMrqGo3A7iEN94FkFUqL9HTAcvDbkUll-f_D6-A
+2024-09-06 01:05:42 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: JwtTokenProvider.generateToken in 22 ms
+2024-09-06 01:05:42 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: AuthenticationService.authenticateAndGenerateToken with result: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoYXlhbiIsInJvbGVzIjpbIlJPTEVfUkVBRCIsIlJPTEVfV1JJVEUiXSwiaWF0IjoxNzI1NTUyMzQyLCJleHAiOjE3MjU2Mzg3NDJ9.nGY1iaPgBlCz_1uCHNStbGZq_2iGbgC-IXoFpAO2q9zEkmodMrqGo3A7iEN94FkFUqL9HTAcvDbkUll-f_D6-A
+2024-09-06 01:05:42 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: AuthenticationService.authenticateAndGenerateToken in 226 ms
+2024-09-06 01:05:42 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: UserController.signin with result: <200 OK OK,success,[Authorization:"Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoYXlhbiIsInJvbGVzIjpbIlJPTEVfUkVBRCIsIlJPTEVfV1JJVEUiXSwiaWF0IjoxNzI1NTUyMzQyLCJleHAiOjE3MjU2Mzg3NDJ9.nGY1iaPgBlCz_1uCHNStbGZq_2iGbgC-IXoFpAO2q9zEkmodMrqGo3A7iEN94FkFUqL9HTAcvDbkUll-f_D6-A"]>
+2024-09-06 01:05:42 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: UserController.signin in 228 ms
+2024-09-06 01:05:48 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: JwtTokenProvider.validateToken with arguments: [eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoYXlhbiIsInJvbGVzIjpbIlJPTEVfUkVBRCIsIlJPTEVfV1JJVEUiXSwiaWF0IjoxNzI1NTUyMzQyLCJleHAiOjE3MjU2Mzg3NDJ9.nGY1iaPgBlCz_1uCHNStbGZq_2iGbgC-IXoFpAO2q9zEkmodMrqGo3A7iEN94FkFUqL9HTAcvDbkUll-f_D6-A]
+2024-09-06 01:05:48 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: JwtTokenProvider.validateToken with result: null
+2024-09-06 01:05:48 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: JwtTokenProvider.validateToken in 22 ms
+2024-09-06 01:05:48 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: JwtTokenProvider.getUsernameFromJWT with arguments: [eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoYXlhbiIsInJvbGVzIjpbIlJPTEVfUkVBRCIsIlJPTEVfV1JJVEUiXSwiaWF0IjoxNzI1NTUyMzQyLCJleHAiOjE3MjU2Mzg3NDJ9.nGY1iaPgBlCz_1uCHNStbGZq_2iGbgC-IXoFpAO2q9zEkmodMrqGo3A7iEN94FkFUqL9HTAcvDbkUll-f_D6-A]
+2024-09-06 01:05:48 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: JwtTokenProvider.getUsernameFromJWT with result: hayan
+2024-09-06 01:05:48 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: JwtTokenProvider.getUsernameFromJWT in 2 ms
+2024-09-06 01:05:48 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: CustomUserDetailsService.loadUserByUsername with arguments: [hayan]
+2024-09-06 01:05:48 DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.password,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2024-09-06 01:05:48 DEBUG org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_0.role 
+    from
+        user_roles r1_0 
+    where
+        r1_0.user_id=?
+2024-09-06 01:05:48 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: CustomUserDetailsService.loadUserByUsername with result: org.springframework.security.core.userdetails.User [Username=hayan, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_READ, ROLE_WRITE]]
+2024-09-06 01:05:48 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: CustomUserDetailsService.loadUserByUsername in 20 ms
+2024-09-06 01:05:48 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: FinanceController.create with arguments: [a]
+2024-09-06 01:05:48 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: FinanceService.save with arguments: [a]
+2024-09-06 01:05:48 DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        c1_0.id 
+    from
+        companies c1_0 
+    where
+        c1_0.ticker=? 
+    fetch
+        first ? rows only
+2024-09-06 01:05:48 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: YahooFinanceScraper.scrapCompany with arguments: [a]
+2024-09-06 01:05:50 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: YahooFinanceScraper.scrapCompany with result: com.hayan.dividend.domain.Company@29d4b960
+2024-09-06 01:05:50 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: YahooFinanceScraper.scrapCompany in 1894 ms
+2024-09-06 01:05:50 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: YahooFinanceScraper.scrapDividends with arguments: [com.hayan.dividend.domain.Company@29d4b960]
+2024-09-06 01:05:52 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: YahooFinanceScraper.scrapDividends with result: [com.hayan.dividend.domain.Dividend@155749da, com.hayan.dividend.domain.Dividend@7afda6f0, com.hayan.dividend.domain.Dividend@75ff1745, com.hayan.dividend.domain.Dividend@50a842c, com.hayan.dividend.domain.Dividend@2abc04ce, com.hayan.dividend.domain.Dividend@3de1fd4f, com.hayan.dividend.domain.Dividend@30a98089, com.hayan.dividend.domain.Dividend@61d34954, com.hayan.dividend.domain.Dividend@2b03abd4, com.hayan.dividend.domain.Dividend@193a207e, com.hayan.dividend.domain.Dividend@65eb4618, com.hayan.dividend.domain.Dividend@1e893a18, com.hayan.dividend.domain.Dividend@28e27f16, com.hayan.dividend.domain.Dividend@601383a4, com.hayan.dividend.domain.Dividend@5ff7d238, com.hayan.dividend.domain.Dividend@8797a24, com.hayan.dividend.domain.Dividend@33d8bef2, com.hayan.dividend.domain.Dividend@4f2a158e, com.hayan.dividend.domain.Dividend@2ead7841, com.hayan.dividend.domain.Dividend@6d468fea, com.hayan.dividend.domain.Dividend@1b9f839e, com.hayan.dividend.domain.Dividend@4867306, com.hayan.dividend.domain.Dividend@41ac6ca7, com.hayan.dividend.domain.Dividend@18cc82a7, com.hayan.dividend.domain.Dividend@7f287153, com.hayan.dividend.domain.Dividend@480123f3, com.hayan.dividend.domain.Dividend@6aeab700, com.hayan.dividend.domain.Dividend@164fd940, com.hayan.dividend.domain.Dividend@2ad19033, com.hayan.dividend.domain.Dividend@6b8e3021, com.hayan.dividend.domain.Dividend@54e3d8e7, com.hayan.dividend.domain.Dividend@3c0e8ee2, com.hayan.dividend.domain.Dividend@1af8d158, com.hayan.dividend.domain.Dividend@edf51e, com.hayan.dividend.domain.Dividend@4a832104, com.hayan.dividend.domain.Dividend@2b2df28, com.hayan.dividend.domain.Dividend@5e9cac37, com.hayan.dividend.domain.Dividend@3136f7ff, com.hayan.dividend.domain.Dividend@626e7bdc, com.hayan.dividend.domain.Dividend@7631b326, com.hayan.dividend.domain.Dividend@4df744c3, com.hayan.dividend.domain.Dividend@4bf8db8d, com.hayan.dividend.domain.Dividend@5ad9f9b5, com.hayan.dividend.domain.Dividend@210ac94b, com.hayan.dividend.domain.Dividend@56ac50f5, com.hayan.dividend.domain.Dividend@5b05dd1e, com.hayan.dividend.domain.Dividend@4e04939a, com.hayan.dividend.domain.Dividend@39b34b80, com.hayan.dividend.domain.Dividend@d2c8fbb, com.hayan.dividend.domain.Dividend@78b44e2d, com.hayan.dividend.domain.Dividend@12469ae2]
+2024-09-06 01:05:52 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: YahooFinanceScraper.scrapDividends in 2178 ms
+2024-09-06 01:05:52 DEBUG org.hibernate.SQL - 
+    /* insert for
+        com.hayan.dividend.domain.Company */insert 
+    into
+        companies (name, ticker, id) 
+    values
+        (?, ?, default)
+2024-09-06 01:05:52 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: DividendBulkRepository.saveAll with arguments: [[com.hayan.dividend.domain.Dividend@155749da, com.hayan.dividend.domain.Dividend@7afda6f0, com.hayan.dividend.domain.Dividend@75ff1745, com.hayan.dividend.domain.Dividend@50a842c, com.hayan.dividend.domain.Dividend@2abc04ce, com.hayan.dividend.domain.Dividend@3de1fd4f, com.hayan.dividend.domain.Dividend@30a98089, com.hayan.dividend.domain.Dividend@61d34954, com.hayan.dividend.domain.Dividend@2b03abd4, com.hayan.dividend.domain.Dividend@193a207e, com.hayan.dividend.domain.Dividend@65eb4618, com.hayan.dividend.domain.Dividend@1e893a18, com.hayan.dividend.domain.Dividend@28e27f16, com.hayan.dividend.domain.Dividend@601383a4, com.hayan.dividend.domain.Dividend@5ff7d238, com.hayan.dividend.domain.Dividend@8797a24, com.hayan.dividend.domain.Dividend@33d8bef2, com.hayan.dividend.domain.Dividend@4f2a158e, com.hayan.dividend.domain.Dividend@2ead7841, com.hayan.dividend.domain.Dividend@6d468fea, com.hayan.dividend.domain.Dividend@1b9f839e, com.hayan.dividend.domain.Dividend@4867306, com.hayan.dividend.domain.Dividend@41ac6ca7, com.hayan.dividend.domain.Dividend@18cc82a7, com.hayan.dividend.domain.Dividend@7f287153, com.hayan.dividend.domain.Dividend@480123f3, com.hayan.dividend.domain.Dividend@6aeab700, com.hayan.dividend.domain.Dividend@164fd940, com.hayan.dividend.domain.Dividend@2ad19033, com.hayan.dividend.domain.Dividend@6b8e3021, com.hayan.dividend.domain.Dividend@54e3d8e7, com.hayan.dividend.domain.Dividend@3c0e8ee2, com.hayan.dividend.domain.Dividend@1af8d158, com.hayan.dividend.domain.Dividend@edf51e, com.hayan.dividend.domain.Dividend@4a832104, com.hayan.dividend.domain.Dividend@2b2df28, com.hayan.dividend.domain.Dividend@5e9cac37, com.hayan.dividend.domain.Dividend@3136f7ff, com.hayan.dividend.domain.Dividend@626e7bdc, com.hayan.dividend.domain.Dividend@7631b326, com.hayan.dividend.domain.Dividend@4df744c3, com.hayan.dividend.domain.Dividend@4bf8db8d, com.hayan.dividend.domain.Dividend@5ad9f9b5, com.hayan.dividend.domain.Dividend@210ac94b, com.hayan.dividend.domain.Dividend@56ac50f5, com.hayan.dividend.domain.Dividend@5b05dd1e, com.hayan.dividend.domain.Dividend@4e04939a, com.hayan.dividend.domain.Dividend@39b34b80, com.hayan.dividend.domain.Dividend@d2c8fbb, com.hayan.dividend.domain.Dividend@78b44e2d, com.hayan.dividend.domain.Dividend@12469ae2]]
+2024-09-06 01:05:52 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: DividendBulkRepository.saveAll with result: null
+2024-09-06 01:05:52 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: DividendBulkRepository.saveAll in 13 ms
+2024-09-06 01:05:52 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: TrieService.handleCompanyAddedEvent with arguments: [CompanyAddedEvent[companyName=Agilent Technologies, Inc.]]
+2024-09-06 01:05:52 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: TrieService.handleCompanyAddedEvent with result: null
+2024-09-06 01:05:52 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: TrieService.handleCompanyAddedEvent in 0 ms
+2024-09-06 01:05:52 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: FinanceService.save with result: null
+2024-09-06 01:05:52 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: FinanceService.save in 4108 ms
+2024-09-06 01:05:52 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: FinanceController.create with result: com.hayan.dividend.global.ApplicationResponse@4616d027
+2024-09-06 01:05:52 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: FinanceController.create in 4109 ms
+2024-09-06 01:05:57 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: JwtTokenProvider.validateToken with arguments: [eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoYXlhbiIsInJvbGVzIjpbIlJPTEVfUkVBRCIsIlJPTEVfV1JJVEUiXSwiaWF0IjoxNzI1NTUyMzQyLCJleHAiOjE3MjU2Mzg3NDJ9.nGY1iaPgBlCz_1uCHNStbGZq_2iGbgC-IXoFpAO2q9zEkmodMrqGo3A7iEN94FkFUqL9HTAcvDbkUll-f_D6-A]
+2024-09-06 01:05:57 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: JwtTokenProvider.validateToken with result: null
+2024-09-06 01:05:57 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: JwtTokenProvider.validateToken in 2 ms
+2024-09-06 01:05:57 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: JwtTokenProvider.getUsernameFromJWT with arguments: [eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoYXlhbiIsInJvbGVzIjpbIlJPTEVfUkVBRCIsIlJPTEVfV1JJVEUiXSwiaWF0IjoxNzI1NTUyMzQyLCJleHAiOjE3MjU2Mzg3NDJ9.nGY1iaPgBlCz_1uCHNStbGZq_2iGbgC-IXoFpAO2q9zEkmodMrqGo3A7iEN94FkFUqL9HTAcvDbkUll-f_D6-A]
+2024-09-06 01:05:57 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: JwtTokenProvider.getUsernameFromJWT with result: hayan
+2024-09-06 01:05:57 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: JwtTokenProvider.getUsernameFromJWT in 2 ms
+2024-09-06 01:05:57 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: CustomUserDetailsService.loadUserByUsername with arguments: [hayan]
+2024-09-06 01:05:57 DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.password,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2024-09-06 01:05:57 DEBUG org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_0.role 
+    from
+        user_roles r1_0 
+    where
+        r1_0.user_id=?
+2024-09-06 01:05:57 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: CustomUserDetailsService.loadUserByUsername with result: org.springframework.security.core.userdetails.User [Username=hayan, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_READ, ROLE_WRITE]]
+2024-09-06 01:05:57 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: CustomUserDetailsService.loadUserByUsername in 4 ms
+2024-09-06 01:05:57 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: FinanceController.create with arguments: [bb]
+2024-09-06 01:05:57 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: FinanceService.save with arguments: [bb]
+2024-09-06 01:05:57 DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        c1_0.id 
+    from
+        companies c1_0 
+    where
+        c1_0.ticker=? 
+    fetch
+        first ? rows only
+2024-09-06 01:05:57 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: YahooFinanceScraper.scrapCompany with arguments: [bb]
+2024-09-06 01:05:58 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: YahooFinanceScraper.scrapCompany with result: com.hayan.dividend.domain.Company@309ff499
+2024-09-06 01:05:58 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: YahooFinanceScraper.scrapCompany in 1279 ms
+2024-09-06 01:05:58 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: YahooFinanceScraper.scrapDividends with arguments: [com.hayan.dividend.domain.Company@309ff499]
+2024-09-06 01:05:59 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: YahooFinanceScraper.scrapDividends with result: []
+2024-09-06 01:05:59 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: YahooFinanceScraper.scrapDividends in 1116 ms
+2024-09-06 01:05:59 DEBUG org.hibernate.SQL - 
+    /* insert for
+        com.hayan.dividend.domain.Company */insert 
+    into
+        companies (name, ticker, id) 
+    values
+        (?, ?, default)
+2024-09-06 01:05:59 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: DividendBulkRepository.saveAll with arguments: [[]]
+2024-09-06 01:05:59 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: DividendBulkRepository.saveAll with result: null
+2024-09-06 01:05:59 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: DividendBulkRepository.saveAll in 0 ms
+2024-09-06 01:05:59 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: TrieService.handleCompanyAddedEvent with arguments: [CompanyAddedEvent[companyName=BlackBerry Limited]]
+2024-09-06 01:05:59 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: TrieService.handleCompanyAddedEvent with result: null
+2024-09-06 01:05:59 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: TrieService.handleCompanyAddedEvent in 0 ms
+2024-09-06 01:05:59 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: FinanceService.save with result: null
+2024-09-06 01:05:59 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: FinanceService.save in 2403 ms
+2024-09-06 01:05:59 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: FinanceController.create with result: com.hayan.dividend.global.ApplicationResponse@5501f362
+2024-09-06 01:05:59 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: FinanceController.create in 2404 ms
+2024-09-06 01:06:02 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: JwtTokenProvider.validateToken with arguments: [eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoYXlhbiIsInJvbGVzIjpbIlJPTEVfUkVBRCIsIlJPTEVfV1JJVEUiXSwiaWF0IjoxNzI1NTUyMzQyLCJleHAiOjE3MjU2Mzg3NDJ9.nGY1iaPgBlCz_1uCHNStbGZq_2iGbgC-IXoFpAO2q9zEkmodMrqGo3A7iEN94FkFUqL9HTAcvDbkUll-f_D6-A]
+2024-09-06 01:06:02 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: JwtTokenProvider.validateToken with result: null
+2024-09-06 01:06:02 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: JwtTokenProvider.validateToken in 2 ms
+2024-09-06 01:06:02 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: JwtTokenProvider.getUsernameFromJWT with arguments: [eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoYXlhbiIsInJvbGVzIjpbIlJPTEVfUkVBRCIsIlJPTEVfV1JJVEUiXSwiaWF0IjoxNzI1NTUyMzQyLCJleHAiOjE3MjU2Mzg3NDJ9.nGY1iaPgBlCz_1uCHNStbGZq_2iGbgC-IXoFpAO2q9zEkmodMrqGo3A7iEN94FkFUqL9HTAcvDbkUll-f_D6-A]
+2024-09-06 01:06:02 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: JwtTokenProvider.getUsernameFromJWT with result: hayan
+2024-09-06 01:06:02 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: JwtTokenProvider.getUsernameFromJWT in 1 ms
+2024-09-06 01:06:02 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: CustomUserDetailsService.loadUserByUsername with arguments: [hayan]
+2024-09-06 01:06:02 DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.password,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2024-09-06 01:06:02 DEBUG org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_0.role 
+    from
+        user_roles r1_0 
+    where
+        r1_0.user_id=?
+2024-09-06 01:06:02 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: CustomUserDetailsService.loadUserByUsername with result: org.springframework.security.core.userdetails.User [Username=hayan, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_READ, ROLE_WRITE]]
+2024-09-06 01:06:02 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: CustomUserDetailsService.loadUserByUsername in 4 ms
+2024-09-06 01:06:02 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: FinanceController.create with arguments: [ca]
+2024-09-06 01:06:02 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: FinanceService.save with arguments: [ca]
+2024-09-06 01:06:02 DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        c1_0.id 
+    from
+        companies c1_0 
+    where
+        c1_0.ticker=? 
+    fetch
+        first ? rows only
+2024-09-06 01:06:02 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: YahooFinanceScraper.scrapCompany with arguments: [ca]
+2024-09-06 01:06:03 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: YahooFinanceScraper.scrapCompany with result: com.hayan.dividend.domain.Company@51fd6546
+2024-09-06 01:06:03 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: YahooFinanceScraper.scrapCompany in 1315 ms
+2024-09-06 01:06:03 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: YahooFinanceScraper.scrapDividends with arguments: [com.hayan.dividend.domain.Company@51fd6546]
+2024-09-06 01:06:04 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: YahooFinanceScraper.scrapDividends with result: [com.hayan.dividend.domain.Dividend@1ef3d1d6, com.hayan.dividend.domain.Dividend@249e501b, com.hayan.dividend.domain.Dividend@2d22085c, com.hayan.dividend.domain.Dividend@3fdb868d, com.hayan.dividend.domain.Dividend@3f268dc1, com.hayan.dividend.domain.Dividend@696e1cb6, com.hayan.dividend.domain.Dividend@5433992f, com.hayan.dividend.domain.Dividend@37bf92ca]
+2024-09-06 01:06:04 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: YahooFinanceScraper.scrapDividends in 1006 ms
+2024-09-06 01:06:04 DEBUG org.hibernate.SQL - 
+    /* insert for
+        com.hayan.dividend.domain.Company */insert 
+    into
+        companies (name, ticker, id) 
+    values
+        (?, ?, default)
+2024-09-06 01:06:04 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: DividendBulkRepository.saveAll with arguments: [[com.hayan.dividend.domain.Dividend@1ef3d1d6, com.hayan.dividend.domain.Dividend@249e501b, com.hayan.dividend.domain.Dividend@2d22085c, com.hayan.dividend.domain.Dividend@3fdb868d, com.hayan.dividend.domain.Dividend@3f268dc1, com.hayan.dividend.domain.Dividend@696e1cb6, com.hayan.dividend.domain.Dividend@5433992f, com.hayan.dividend.domain.Dividend@37bf92ca]]
+2024-09-06 01:06:04 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: DividendBulkRepository.saveAll with result: null
+2024-09-06 01:06:04 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: DividendBulkRepository.saveAll in 1 ms
+2024-09-06 01:06:04 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: TrieService.handleCompanyAddedEvent with arguments: [CompanyAddedEvent[companyName=Xtrackers California Municipal Bond ETF]]
+2024-09-06 01:06:04 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: TrieService.handleCompanyAddedEvent with result: null
+2024-09-06 01:06:04 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: TrieService.handleCompanyAddedEvent in 0 ms
+2024-09-06 01:06:04 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: FinanceService.save with result: null
+2024-09-06 01:06:04 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: FinanceService.save in 2326 ms
+2024-09-06 01:06:04 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: FinanceController.create with result: com.hayan.dividend.global.ApplicationResponse@1d0836ed
+2024-09-06 01:06:04 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: FinanceController.create in 2326 ms
+2024-09-06 01:10:00 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: YahooFinanceScheduling.updateDividends with arguments: []
+2024-09-06 01:10:00 DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        c1_0.id,
+        c1_0.name,
+        c1_0.ticker 
+    from
+        companies c1_0
+2024-09-06 01:10:00 DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        d1_0.id,
+        d1_0.company_id,
+        d1_0.date,
+        d1_0.dividend 
+    from
+        dividends d1_0 
+    where
+        d1_0.company_id=?
+2024-09-06 01:10:00 DEBUG org.hibernate.SQL - 
+    select
+        c1_0.id,
+        c1_0.name,
+        c1_0.ticker 
+    from
+        companies c1_0 
+    where
+        c1_0.id=?
+2024-09-06 01:10:00 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: YahooFinanceScraper.scrapDividends with arguments: [com.hayan.dividend.domain.Company@5f7a41ce]
+2024-09-06 01:10:02 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: YahooFinanceScraper.scrapDividends with result: [com.hayan.dividend.domain.Dividend@54755e00, com.hayan.dividend.domain.Dividend@2648ff0d, com.hayan.dividend.domain.Dividend@4a89943d, com.hayan.dividend.domain.Dividend@3fee17f2, com.hayan.dividend.domain.Dividend@4195cb51, com.hayan.dividend.domain.Dividend@20c4f4f9, com.hayan.dividend.domain.Dividend@26eaa4a0, com.hayan.dividend.domain.Dividend@69f47608, com.hayan.dividend.domain.Dividend@654f724, com.hayan.dividend.domain.Dividend@130a82b, com.hayan.dividend.domain.Dividend@728cc309, com.hayan.dividend.domain.Dividend@3802bf66, com.hayan.dividend.domain.Dividend@194e9295, com.hayan.dividend.domain.Dividend@1dbb1067, com.hayan.dividend.domain.Dividend@93b1c52, com.hayan.dividend.domain.Dividend@246f7b9c, com.hayan.dividend.domain.Dividend@49d89fbe, com.hayan.dividend.domain.Dividend@ca586ca, com.hayan.dividend.domain.Dividend@5d2dd280, com.hayan.dividend.domain.Dividend@2c1f122, com.hayan.dividend.domain.Dividend@f69bbab, com.hayan.dividend.domain.Dividend@2fdaef5a, com.hayan.dividend.domain.Dividend@1c5091f3, com.hayan.dividend.domain.Dividend@11152bba, com.hayan.dividend.domain.Dividend@53636ed0, com.hayan.dividend.domain.Dividend@2bbbfbd9, com.hayan.dividend.domain.Dividend@337c2854, com.hayan.dividend.domain.Dividend@b0c9d7a, com.hayan.dividend.domain.Dividend@43516725, com.hayan.dividend.domain.Dividend@37c039a5, com.hayan.dividend.domain.Dividend@652c9981, com.hayan.dividend.domain.Dividend@aa43f13, com.hayan.dividend.domain.Dividend@4204192d, com.hayan.dividend.domain.Dividend@74bf1dd9, com.hayan.dividend.domain.Dividend@755e625e, com.hayan.dividend.domain.Dividend@5e299741, com.hayan.dividend.domain.Dividend@3c0620d8, com.hayan.dividend.domain.Dividend@30dbb354, com.hayan.dividend.domain.Dividend@36116b83, com.hayan.dividend.domain.Dividend@2490719f, com.hayan.dividend.domain.Dividend@291d8535, com.hayan.dividend.domain.Dividend@44b1d251, com.hayan.dividend.domain.Dividend@79c1f437, com.hayan.dividend.domain.Dividend@5efa7e19, com.hayan.dividend.domain.Dividend@1b0b7cde, com.hayan.dividend.domain.Dividend@516206b4, com.hayan.dividend.domain.Dividend@27f420e3, com.hayan.dividend.domain.Dividend@2af388b2, com.hayan.dividend.domain.Dividend@6a5efcbe, com.hayan.dividend.domain.Dividend@2b4810e7, com.hayan.dividend.domain.Dividend@2dbdce55]
+2024-09-06 01:10:02 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: YahooFinanceScraper.scrapDividends in 1915 ms
+2024-09-06 01:10:02 DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        d1_0.id,
+        d1_0.company_id,
+        d1_0.date,
+        d1_0.dividend 
+    from
+        dividends d1_0 
+    where
+        d1_0.company_id=?
+2024-09-06 01:10:02 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: YahooFinanceScraper.scrapDividends with arguments: [com.hayan.dividend.domain.Company@222b0d69]
+2024-09-06 01:10:03 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: YahooFinanceScraper.scrapDividends with result: []
+2024-09-06 01:10:03 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: YahooFinanceScraper.scrapDividends in 1321 ms
+2024-09-06 01:10:03 DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        d1_0.id,
+        d1_0.company_id,
+        d1_0.date,
+        d1_0.dividend 
+    from
+        dividends d1_0 
+    where
+        d1_0.company_id=?
+2024-09-06 01:10:03 DEBUG org.hibernate.SQL - 
+    select
+        c1_0.id,
+        c1_0.name,
+        c1_0.ticker 
+    from
+        companies c1_0 
+    where
+        c1_0.id=?
+2024-09-06 01:10:03 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: YahooFinanceScraper.scrapDividends with arguments: [com.hayan.dividend.domain.Company@577c853c]
+2024-09-06 01:10:04 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: YahooFinanceScraper.scrapDividends with result: [com.hayan.dividend.domain.Dividend@f4d5aa5, com.hayan.dividend.domain.Dividend@649d9014, com.hayan.dividend.domain.Dividend@302b3d79, com.hayan.dividend.domain.Dividend@17e4ea1a, com.hayan.dividend.domain.Dividend@72190231, com.hayan.dividend.domain.Dividend@7a8c2156, com.hayan.dividend.domain.Dividend@13a50b8b, com.hayan.dividend.domain.Dividend@232187df]
+2024-09-06 01:10:04 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: YahooFinanceScraper.scrapDividends in 1276 ms
+2024-09-06 01:10:04 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: YahooFinanceScheduling.updateDividends with result: null
+2024-09-06 01:10:04 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: YahooFinanceScheduling.updateDividends in 4553 ms
+2024-09-06 01:14:20 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-09-06 01:14:20 WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-09-06 01:14:20 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-09-06 01:14:20 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-09-06 01:14:23 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-09-06 01:14:23 INFO  c.hayan.dividend.DividendApplication - Starting DividendApplication using Java 17.0.7 with PID 75324 (/Users/chowhite/coding/zerobase/dividend/build/classes/java/main started by chowhite in /Users/chowhite/coding/zerobase/dividend)
+2024-09-06 01:14:23 INFO  c.hayan.dividend.DividendApplication - The following 2 profiles are active: "test", "default"
+2024-09-06 01:14:23 INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/chowhite/.gradle/caches/modules-2/files-2.1/io.github.cdimascio/java-dotenv/5.2.2/f77d54ff193ed4b07415ab8d7b3d0550716aa8c/java-dotenv-5.2.2.jar referenced one or more files that do not exist: file:/Users/chowhite/.gradle/caches/modules-2/files-2.1/io.github.cdimascio/java-dotenv/5.2.2/f77d54ff193ed4b07415ab8d7b3d0550716aa8c/kotlin-stdlib-1.4.0.jar,file:/Users/chowhite/.gradle/caches/modules-2/files-2.1/io.github.cdimascio/java-dotenv/5.2.2/f77d54ff193ed4b07415ab8d7b3d0550716aa8c/kotlin-stdlib-common-1.4.0.jar,file:/Users/chowhite/.gradle/caches/modules-2/files-2.1/io.github.cdimascio/java-dotenv/5.2.2/f77d54ff193ed4b07415ab8d7b3d0550716aa8c/annotations-13.0.jar
+2024-09-06 01:14:23 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-09-06 01:14:23 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-09-06 01:14:23 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-09-06 01:14:23 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-06 01:14:23 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 64 ms. Found 3 JPA repository interfaces.
+2024-09-06 01:14:23 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-09-06 01:14:23 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-09-06 01:14:23 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.hayan.dividend.repository.CompanyRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-09-06 01:14:23 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.hayan.dividend.repository.DividendRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-09-06 01:14:23 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.hayan.dividend.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-09-06 01:14:23 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2024-09-06 01:14:24 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-09-06 01:14:24 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-09-06 01:14:24 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-09-06 01:14:24 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-09-06 01:14:24 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-09-06 01:14:24 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 724 ms
+2024-09-06 01:14:24 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-09-06 01:14:24 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:db user=SA
+2024-09-06 01:14:24 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-09-06 01:14:24 INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:db'
+2024-09-06 01:14:24 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-09-06 01:14:24 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-09-06 01:14:24 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-09-06 01:14:24 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-09-06 01:14:24 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-09-06 01:14:24 DEBUG org.hibernate.SQL - 
+    create table companies (
+        id bigint generated by default as identity,
+        name varchar(255) not null,
+        ticker varchar(255) not null,
+        primary key (id)
+    )
+2024-09-06 01:14:24 DEBUG org.hibernate.SQL - 
+    create table dividends (
+        id bigint generated by default as identity,
+        date date,
+        dividend varchar(255),
+        company_id bigint,
+        primary key (id)
+    )
+2024-09-06 01:14:24 DEBUG org.hibernate.SQL - 
+    create table user_roles (
+        user_id bigint not null,
+        role enum ('READ','WRITE')
+    )
+2024-09-06 01:14:24 DEBUG org.hibernate.SQL - 
+    create table users (
+        id bigint generated by default as identity,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    )
+2024-09-06 01:14:24 DEBUG org.hibernate.SQL - 
+    alter table if exists users 
+       drop constraint if exists UKr43af9ap4edm43mmtq01oddj6
+2024-09-06 01:14:24 DEBUG org.hibernate.SQL - 
+    alter table if exists users 
+       add constraint UKr43af9ap4edm43mmtq01oddj6 unique (username)
+2024-09-06 01:14:24 DEBUG org.hibernate.SQL - 
+    alter table if exists dividends 
+       add constraint FKeg6asiy7s7dns1nsxve1avean 
+       foreign key (company_id) 
+       references companies
+2024-09-06 01:14:24 DEBUG org.hibernate.SQL - 
+    alter table if exists user_roles 
+       add constraint FKhfh9dx7w3ubf1co1vdev94g3f 
+       foreign key (user_id) 
+       references users
+2024-09-06 01:14:24 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-06 01:14:25 DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        c1_0.id,
+        c1_0.name,
+        c1_0.ticker 
+    from
+        companies c1_0
+2024-09-06 01:14:25 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: CacheConfig.redisConnectionFactory with arguments: []
+2024-09-06 01:14:25 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: CacheConfig.redisConnectionFactory with result: org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory@2a725f9b
+2024-09-06 01:14:25 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: CacheConfig.redisConnectionFactory in 7 ms
+2024-09-06 01:14:25 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: CacheConfig.redisCacheManager with arguments: [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory@2a725f9b]
+2024-09-06 01:14:25 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: CacheConfig.redisCacheManager with result: org.springframework.data.redis.cache.RedisCacheManager@c40e53c
+2024-09-06 01:14:25 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: CacheConfig.redisCacheManager in 8 ms
+2024-09-06 01:14:25 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: SecurityConfig.passwordEncoder with arguments: []
+2024-09-06 01:14:25 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: SecurityConfig.passwordEncoder with result: org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder@760cc42e
+2024-09-06 01:14:25 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: SecurityConfig.passwordEncoder in 0 ms
+2024-09-06 01:14:25 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: SecurityConfig.authenticationManager with arguments: [org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration@5a223051]
+2024-09-06 01:14:25 INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-09-06 01:14:25 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: SecurityConfig.authenticationManager with result: org.springframework.security.authentication.ProviderManager@14c77065
+2024-09-06 01:14:25 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: SecurityConfig.authenticationManager in 9 ms
+2024-09-06 01:14:25 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-09-06 01:14:25 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: SecurityConfig.securityFilterChain with arguments: [org.springframework.security.config.annotation.web.builders.HttpSecurity@671345c2]
+2024-09-06 01:14:25 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: SecurityConfig.securityFilterChain with result: DefaultSecurityFilterChain [RequestMatcher=any request, Filters=[org.springframework.security.web.session.DisableEncodeUrlFilter@3dba4d9, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5d35c7a7, org.springframework.security.web.context.SecurityContextHolderFilter@6a463614, org.springframework.security.web.header.HeaderWriterFilter@391656d6, org.springframework.security.web.authentication.logout.LogoutFilter@6f42f46f, com.hayan.dividend.jwt.JwtAuthenticationFilter@593e7402, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3fd8498e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@609d24ec, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@39625a9c, org.springframework.security.web.session.SessionManagementFilter@26675152, org.springframework.security.web.access.ExceptionTranslationFilter@1f19bc01, org.springframework.security.web.access.intercept.AuthorizationFilter@daa7346]]
+2024-09-06 01:14:25 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: SecurityConfig.securityFilterChain in 17 ms
+2024-09-06 01:14:25 INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-09-06 01:14:25 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-09-06 01:14:25 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-09-06 01:14:25 INFO  c.hayan.dividend.DividendApplication - Started DividendApplication in 2.334 seconds (process running for 2.621)
+2024-09-06 01:20:00 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: YahooFinanceScheduling.updateDividends with arguments: []
+2024-09-06 01:20:00 DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        c1_0.id,
+        c1_0.name,
+        c1_0.ticker 
+    from
+        companies c1_0
+2024-09-06 01:20:00 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: YahooFinanceScheduling.updateDividends with result: null
+2024-09-06 01:20:00 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: YahooFinanceScheduling.updateDividends in 33 ms
+2024-09-06 01:29:59 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: YahooFinanceScheduling.updateDividends with arguments: []
+2024-09-06 01:30:00 DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        c1_0.id,
+        c1_0.name,
+        c1_0.ticker 
+    from
+        companies c1_0
+2024-09-06 01:30:00 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: YahooFinanceScheduling.updateDividends with result: null
+2024-09-06 01:30:00 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: YahooFinanceScheduling.updateDividends in 27 ms
+2024-09-06 01:40:00 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: YahooFinanceScheduling.updateDividends with arguments: []
+2024-09-06 01:40:00 DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        c1_0.id,
+        c1_0.name,
+        c1_0.ticker 
+    from
+        companies c1_0
+2024-09-06 01:40:00 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: YahooFinanceScheduling.updateDividends with result: null
+2024-09-06 01:40:00 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: YahooFinanceScheduling.updateDividends in 27 ms
+2024-09-06 01:50:00 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: YahooFinanceScheduling.updateDividends with arguments: []
+2024-09-06 01:50:00 DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        c1_0.id,
+        c1_0.name,
+        c1_0.ticker 
+    from
+        companies c1_0
+2024-09-06 01:50:00 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: YahooFinanceScheduling.updateDividends with result: null
+2024-09-06 01:50:00 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: YahooFinanceScheduling.updateDividends in 28 ms
+2024-09-06 02:00:00 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: YahooFinanceScheduling.updateDividends with arguments: []
+2024-09-06 02:00:00 DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        c1_0.id,
+        c1_0.name,
+        c1_0.ticker 
+    from
+        companies c1_0
+2024-09-06 02:00:00 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: YahooFinanceScheduling.updateDividends with result: null
+2024-09-06 02:00:00 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: YahooFinanceScheduling.updateDividends in 24 ms
+2024-09-06 02:10:00 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: YahooFinanceScheduling.updateDividends with arguments: []
+2024-09-06 02:10:00 DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        c1_0.id,
+        c1_0.name,
+        c1_0.ticker 
+    from
+        companies c1_0
+2024-09-06 02:10:00 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: YahooFinanceScheduling.updateDividends with result: null
+2024-09-06 02:10:00 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: YahooFinanceScheduling.updateDividends in 16 ms
+2024-09-06 02:19:59 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: YahooFinanceScheduling.updateDividends with arguments: []
+2024-09-06 02:19:59 DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        c1_0.id,
+        c1_0.name,
+        c1_0.ticker 
+    from
+        companies c1_0
+2024-09-06 02:19:59 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: YahooFinanceScheduling.updateDividends with result: null
+2024-09-06 02:19:59 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: YahooFinanceScheduling.updateDividends in 25 ms
+2024-09-06 02:26:51 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m26s251ms).
+2024-09-06 02:31:42 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m51s522ms).
+2024-09-06 06:28:37 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h56m55s361ms).
+2024-09-06 09:37:45 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h9m7s829ms).
+2024-09-06 13:33:42 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h55m56s443ms).
+2024-09-06 13:35:47 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: YahooFinanceScheduling.updateDividends with arguments: []
+2024-09-06 13:35:47 DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        c1_0.id,
+        c1_0.name,
+        c1_0.ticker 
+    from
+        companies c1_0
+2024-09-06 13:35:47 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: YahooFinanceScheduling.updateDividends with result: null
+2024-09-06 13:35:47 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: YahooFinanceScheduling.updateDividends in 13 ms
+2024-09-06 13:40:00 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: YahooFinanceScheduling.updateDividends with arguments: []
+2024-09-06 13:40:00 DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        c1_0.id,
+        c1_0.name,
+        c1_0.ticker 
+    from
+        companies c1_0
+2024-09-06 13:40:00 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: YahooFinanceScheduling.updateDividends with result: null
+2024-09-06 13:40:00 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: YahooFinanceScheduling.updateDividends in 13 ms
+2024-09-06 13:46:59 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-09-06 13:46:59 WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-09-06 13:46:59 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-09-06 13:46:59 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-09-06 18:18:50 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-09-06 18:18:50 INFO  c.hayan.dividend.DividendApplication - Starting DividendApplication using Java 17.0.7 with PID 83773 (/Users/chowhite/coding/zerobase/dividend/build/classes/java/main started by chowhite in /Users/chowhite/coding/zerobase/dividend)
+2024-09-06 18:18:50 INFO  c.hayan.dividend.DividendApplication - The following 2 profiles are active: "test", "default"
+2024-09-06 18:18:50 INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/chowhite/.gradle/caches/modules-2/files-2.1/io.github.cdimascio/java-dotenv/5.2.2/f77d54ff193ed4b07415ab8d7b3d0550716aa8c/java-dotenv-5.2.2.jar referenced one or more files that do not exist: file:/Users/chowhite/.gradle/caches/modules-2/files-2.1/io.github.cdimascio/java-dotenv/5.2.2/f77d54ff193ed4b07415ab8d7b3d0550716aa8c/kotlin-stdlib-1.4.0.jar,file:/Users/chowhite/.gradle/caches/modules-2/files-2.1/io.github.cdimascio/java-dotenv/5.2.2/f77d54ff193ed4b07415ab8d7b3d0550716aa8c/kotlin-stdlib-common-1.4.0.jar,file:/Users/chowhite/.gradle/caches/modules-2/files-2.1/io.github.cdimascio/java-dotenv/5.2.2/f77d54ff193ed4b07415ab8d7b3d0550716aa8c/annotations-13.0.jar
+2024-09-06 18:18:50 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-09-06 18:18:50 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-09-06 18:18:51 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-09-06 18:18:51 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-06 18:18:51 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 63 ms. Found 3 JPA repository interfaces.
+2024-09-06 18:18:51 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-09-06 18:18:51 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-09-06 18:18:51 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.hayan.dividend.repository.CompanyRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-09-06 18:18:51 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.hayan.dividend.repository.DividendRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-09-06 18:18:51 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.hayan.dividend.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-09-06 18:18:51 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2024-09-06 18:18:51 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-09-06 18:18:51 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-09-06 18:18:51 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-09-06 18:18:51 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-09-06 18:18:51 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-09-06 18:18:51 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 776 ms
+2024-09-06 18:18:51 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-09-06 18:18:51 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:db user=SA
+2024-09-06 18:18:51 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-09-06 18:18:51 INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:db'
+2024-09-06 18:18:51 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-09-06 18:18:51 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-09-06 18:18:51 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-09-06 18:18:52 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-09-06 18:18:52 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-09-06 18:18:52 DEBUG org.hibernate.SQL - 
+    create table companies (
+        id bigint generated by default as identity,
+        name varchar(255) not null,
+        ticker varchar(255) not null,
+        primary key (id)
+    )
+2024-09-06 18:18:52 DEBUG org.hibernate.SQL - 
+    create table dividends (
+        id bigint generated by default as identity,
+        date date,
+        dividend varchar(255),
+        company_id bigint,
+        primary key (id)
+    )
+2024-09-06 18:18:52 DEBUG org.hibernate.SQL - 
+    create table user_roles (
+        user_id bigint not null,
+        role enum ('READ','WRITE')
+    )
+2024-09-06 18:18:52 DEBUG org.hibernate.SQL - 
+    create table users (
+        id bigint generated by default as identity,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    )
+2024-09-06 18:18:52 DEBUG org.hibernate.SQL - 
+    alter table if exists users 
+       drop constraint if exists UKr43af9ap4edm43mmtq01oddj6
+2024-09-06 18:18:52 DEBUG org.hibernate.SQL - 
+    alter table if exists users 
+       add constraint UKr43af9ap4edm43mmtq01oddj6 unique (username)
+2024-09-06 18:18:52 DEBUG org.hibernate.SQL - 
+    alter table if exists dividends 
+       add constraint FKeg6asiy7s7dns1nsxve1avean 
+       foreign key (company_id) 
+       references companies
+2024-09-06 18:18:52 DEBUG org.hibernate.SQL - 
+    alter table if exists user_roles 
+       add constraint FKhfh9dx7w3ubf1co1vdev94g3f 
+       foreign key (user_id) 
+       references users
+2024-09-06 18:18:52 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-06 18:18:52 DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        c1_0.id,
+        c1_0.name,
+        c1_0.ticker 
+    from
+        companies c1_0
+2024-09-06 18:18:52 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: CacheConfig.redisConnectionFactory with arguments: []
+2024-09-06 18:18:52 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: CacheConfig.redisConnectionFactory with result: org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory@7e577fd
+2024-09-06 18:18:52 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: CacheConfig.redisConnectionFactory in 8 ms
+2024-09-06 18:18:52 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: CacheConfig.redisCacheManager with arguments: [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory@7e577fd]
+2024-09-06 18:18:52 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: CacheConfig.redisCacheManager with result: org.springframework.data.redis.cache.RedisCacheManager@4c1e355
+2024-09-06 18:18:52 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: CacheConfig.redisCacheManager in 10 ms
+2024-09-06 18:18:52 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: SecurityConfig.passwordEncoder with arguments: []
+2024-09-06 18:18:52 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: SecurityConfig.passwordEncoder with result: org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder@3e31962a
+2024-09-06 18:18:52 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: SecurityConfig.passwordEncoder in 1 ms
+2024-09-06 18:18:52 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: SecurityConfig.authenticationManager with arguments: [org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration@96dfe75]
+2024-09-06 18:18:52 INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-09-06 18:18:52 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: SecurityConfig.authenticationManager with result: org.springframework.security.authentication.ProviderManager@348fbfc9
+2024-09-06 18:18:52 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: SecurityConfig.authenticationManager in 11 ms
+2024-09-06 18:18:52 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-09-06 18:18:53 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: SecurityConfig.securityFilterChain with arguments: [org.springframework.security.config.annotation.web.builders.HttpSecurity@51b0e677]
+2024-09-06 18:18:53 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: SecurityConfig.securityFilterChain with result: DefaultSecurityFilterChain [RequestMatcher=any request, Filters=[org.springframework.security.web.session.DisableEncodeUrlFilter@39625a9c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@67c1dc05, org.springframework.security.web.context.SecurityContextHolderFilter@8a6a80a, org.springframework.security.web.header.HeaderWriterFilter@365a1176, org.springframework.security.web.authentication.logout.LogoutFilter@6953d4de, com.hayan.dividend.jwt.JwtAuthenticationFilter@143a37a5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1dcc255d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@643cb398, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3e8ecf44, org.springframework.security.web.session.SessionManagementFilter@6a463614, org.springframework.security.web.access.ExceptionTranslationFilter@151bea27, org.springframework.security.web.access.intercept.AuthorizationFilter@3dba4d9]]
+2024-09-06 18:18:53 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: SecurityConfig.securityFilterChain in 18 ms
+2024-09-06 18:18:53 INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-09-06 18:18:53 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-09-06 18:18:53 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2024-09-06 18:18:53 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-09-06 18:18:53 WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-09-06 18:18:53 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-09-06 18:18:53 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-09-06 18:18:53 INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-09-06 18:18:53 ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2024-09-06 18:19:02 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-09-06 18:19:02 INFO  c.hayan.dividend.DividendApplication - Starting DividendApplication using Java 17.0.7 with PID 83800 (/Users/chowhite/coding/zerobase/dividend/build/classes/java/main started by chowhite in /Users/chowhite/coding/zerobase/dividend)
+2024-09-06 18:19:02 INFO  c.hayan.dividend.DividendApplication - The following 2 profiles are active: "test", "default"
+2024-09-06 18:19:02 INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/chowhite/.gradle/caches/modules-2/files-2.1/io.github.cdimascio/java-dotenv/5.2.2/f77d54ff193ed4b07415ab8d7b3d0550716aa8c/java-dotenv-5.2.2.jar referenced one or more files that do not exist: file:/Users/chowhite/.gradle/caches/modules-2/files-2.1/io.github.cdimascio/java-dotenv/5.2.2/f77d54ff193ed4b07415ab8d7b3d0550716aa8c/kotlin-stdlib-1.4.0.jar,file:/Users/chowhite/.gradle/caches/modules-2/files-2.1/io.github.cdimascio/java-dotenv/5.2.2/f77d54ff193ed4b07415ab8d7b3d0550716aa8c/kotlin-stdlib-common-1.4.0.jar,file:/Users/chowhite/.gradle/caches/modules-2/files-2.1/io.github.cdimascio/java-dotenv/5.2.2/f77d54ff193ed4b07415ab8d7b3d0550716aa8c/annotations-13.0.jar
+2024-09-06 18:19:02 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-09-06 18:19:02 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-09-06 18:19:02 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-09-06 18:19:02 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-06 18:19:03 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 66 ms. Found 3 JPA repository interfaces.
+2024-09-06 18:19:03 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-09-06 18:19:03 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-09-06 18:19:03 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.hayan.dividend.repository.CompanyRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-09-06 18:19:03 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.hayan.dividend.repository.DividendRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-09-06 18:19:03 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.hayan.dividend.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-09-06 18:19:03 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2024-09-06 18:19:03 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-09-06 18:19:03 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-09-06 18:19:03 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-09-06 18:19:03 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-09-06 18:19:03 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-09-06 18:19:03 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 736 ms
+2024-09-06 18:19:03 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-09-06 18:19:03 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:db user=SA
+2024-09-06 18:19:03 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-09-06 18:19:03 INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:db'
+2024-09-06 18:19:03 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-09-06 18:19:03 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-09-06 18:19:03 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-09-06 18:19:03 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-09-06 18:19:04 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-09-06 18:19:04 DEBUG org.hibernate.SQL - 
+    create table companies (
+        id bigint generated by default as identity,
+        name varchar(255) not null,
+        ticker varchar(255) not null,
+        primary key (id)
+    )
+2024-09-06 18:19:04 DEBUG org.hibernate.SQL - 
+    create table dividends (
+        id bigint generated by default as identity,
+        date date,
+        dividend varchar(255),
+        company_id bigint,
+        primary key (id)
+    )
+2024-09-06 18:19:04 DEBUG org.hibernate.SQL - 
+    create table user_roles (
+        user_id bigint not null,
+        role enum ('READ','WRITE')
+    )
+2024-09-06 18:19:04 DEBUG org.hibernate.SQL - 
+    create table users (
+        id bigint generated by default as identity,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    )
+2024-09-06 18:19:04 DEBUG org.hibernate.SQL - 
+    alter table if exists users 
+       drop constraint if exists UKr43af9ap4edm43mmtq01oddj6
+2024-09-06 18:19:04 DEBUG org.hibernate.SQL - 
+    alter table if exists users 
+       add constraint UKr43af9ap4edm43mmtq01oddj6 unique (username)
+2024-09-06 18:19:04 DEBUG org.hibernate.SQL - 
+    alter table if exists dividends 
+       add constraint FKeg6asiy7s7dns1nsxve1avean 
+       foreign key (company_id) 
+       references companies
+2024-09-06 18:19:04 DEBUG org.hibernate.SQL - 
+    alter table if exists user_roles 
+       add constraint FKhfh9dx7w3ubf1co1vdev94g3f 
+       foreign key (user_id) 
+       references users
+2024-09-06 18:19:04 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-06 18:19:04 DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        c1_0.id,
+        c1_0.name,
+        c1_0.ticker 
+    from
+        companies c1_0
+2024-09-06 18:19:04 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: CacheConfig.redisConnectionFactory with arguments: []
+2024-09-06 18:19:04 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: CacheConfig.redisConnectionFactory with result: org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory@57bbc6a8
+2024-09-06 18:19:04 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: CacheConfig.redisConnectionFactory in 8 ms
+2024-09-06 18:19:04 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: CacheConfig.redisCacheManager with arguments: [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory@57bbc6a8]
+2024-09-06 18:19:04 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: CacheConfig.redisCacheManager with result: org.springframework.data.redis.cache.RedisCacheManager@3dbc9b8c
+2024-09-06 18:19:04 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: CacheConfig.redisCacheManager in 9 ms
+2024-09-06 18:19:04 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: SecurityConfig.passwordEncoder with arguments: []
+2024-09-06 18:19:04 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: SecurityConfig.passwordEncoder with result: org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder@7b432cba
+2024-09-06 18:19:04 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: SecurityConfig.passwordEncoder in 1 ms
+2024-09-06 18:19:04 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: SecurityConfig.authenticationManager with arguments: [org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration@3b16ffac]
+2024-09-06 18:19:04 INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-09-06 18:19:04 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: SecurityConfig.authenticationManager with result: org.springframework.security.authentication.ProviderManager@35bc1d56
+2024-09-06 18:19:04 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: SecurityConfig.authenticationManager in 10 ms
+2024-09-06 18:19:04 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-09-06 18:19:04 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: SecurityConfig.securityFilterChain with arguments: [org.springframework.security.config.annotation.web.builders.HttpSecurity@7524545d]
+2024-09-06 18:19:04 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: SecurityConfig.securityFilterChain with result: DefaultSecurityFilterChain [RequestMatcher=any request, Filters=[org.springframework.security.web.session.DisableEncodeUrlFilter@11caa417, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7b4e5011, org.springframework.security.web.context.SecurityContextHolderFilter@1e1db8a1, org.springframework.security.web.header.HeaderWriterFilter@248343db, org.springframework.security.web.authentication.logout.LogoutFilter@7155a8eb, com.hayan.dividend.jwt.JwtAuthenticationFilter@37414c13, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@129ec986, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3fd8498e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@40c38b01, org.springframework.security.web.session.SessionManagementFilter@1d29b9a3, org.springframework.security.web.access.ExceptionTranslationFilter@2262d273, org.springframework.security.web.access.intercept.AuthorizationFilter@176fb037]]
+2024-09-06 18:19:04 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: SecurityConfig.securityFilterChain in 17 ms
+2024-09-06 18:19:04 INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-09-06 18:19:04 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-09-06 18:19:04 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-09-06 18:19:04 INFO  c.hayan.dividend.DividendApplication - Started DividendApplication in 2.367 seconds (process running for 2.672)
+2024-09-06 18:20:00 INFO  c.hayan.dividend.aop.LoggingAspect - Entering method: YahooFinanceScheduling.updateDividends with arguments: []
+2024-09-06 18:20:00 DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        c1_0.id,
+        c1_0.name,
+        c1_0.ticker 
+    from
+        companies c1_0
+2024-09-06 18:20:00 INFO  c.hayan.dividend.aop.LoggingAspect - Exiting method: YahooFinanceScheduling.updateDividends with result: null
+2024-09-06 18:20:00 INFO  c.hayan.dividend.aop.LoggingAspect - Executed method: YahooFinanceScheduling.updateDividends in 16 ms
+2024-09-06 19:54:38 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h33m34s768ms).
+2024-09-06 21:23:04 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h28m26s559ms).
