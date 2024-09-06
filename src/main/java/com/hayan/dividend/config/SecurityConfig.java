@@ -32,10 +32,10 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(authz -> authz
-                        .requestMatchers("/auth/**", "/finance/**", "/h2-console/**").permitAll()
+                        .requestMatchers("/auth/**", "/h2-console/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/company/**").hasRole("WRITE")
                         .requestMatchers(HttpMethod.DELETE, "/company/**").hasRole("WRITE")
-                        .requestMatchers(HttpMethod.GET, "/company/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/company/**", "/finance/**").hasAnyRole("READ", "WRITE")
                         .anyRequest().authenticated()
                 )
                 .headers(headers -> headers
